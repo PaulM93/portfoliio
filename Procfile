@@ -1,1 +1,1 @@
-web: node /teeessst.js
+web: node /server.js
