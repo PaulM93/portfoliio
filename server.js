@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 require("dotenv").config();
 
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
