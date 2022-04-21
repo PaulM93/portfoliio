@@ -60,7 +60,9 @@ app.post("/send-email", async (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.log(error);
-        return res.status(500).json({ message: "There was a problem :(" });
+        return res
+          .status(500)
+          .json({ message: "There was a problem :(", error: error });
       } else {
         return res
           .status(200)
