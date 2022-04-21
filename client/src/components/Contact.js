@@ -217,29 +217,6 @@ export default function Contact({ contactRef }) {
                 ""
               )}
             </FormControl>
-            <FormControl htmlFor="email" isRequired isInvalid={errors.email}>
-              <FormLabel color="primaryMute" htmlFor="email">
-                Email address
-              </FormLabel>
-              <Input
-                focusBorderColor="primary"
-                errorBorderColor="red.300"
-                borderColor={"whiteAlpha.400"}
-                color="secondary"
-                size="lg"
-                placeholder="Your Email..."
-                onChange={handleChange}
-                id="email"
-                type="email"
-              />
-              {errors.email ? (
-                <FormErrorMessage color="red.300">
-                  Your email is required.
-                </FormErrorMessage>
-              ) : (
-                ""
-              )}
-            </FormControl>
             {submitButton}
           </Flex>
         </Flex>
