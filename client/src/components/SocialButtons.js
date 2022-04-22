@@ -44,7 +44,7 @@ export default function SocialButtons({ type, shouldShowActions }) {
     },
     {
       name: "instagram",
-      val: "https://www.instagram.com/",
+      val: "https://www.instagram.com/paumar93/",
       icon: <FaInstagram />,
     },
   ];

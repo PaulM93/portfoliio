@@ -79,8 +79,8 @@ export default function Index({ projectRef }) {
         "I did everything basically.",
       ],
       body: "Olatoo is an online Spanish language learning platform where you can connect with professional tutors from all across Latin America for one-to-one conversational Spanish classes. Users sign up to the site via facebook, google or email and then have the ability to take 3 free trial classes through zoom. Once completed users may pay for a subscription plan via Stripe which gives them access to lesson credits.",
-      link: "https://www.olatoo.com/",
-      github: "",
+      link: "",
+      github: "https://github.com/PaulM93/portfoliio",
     },
   ];
 

@@ -32,7 +32,7 @@ export default function About({ duration }) {
           My goal is to continuously grow as a developer while staying current
           with the latest trends and technologies. I would love to work for a
           team that is truly passionate about what they create and that is
-          striving consistently to move forward.l
+          striving consistently to move forward.
         </Text>
       </motion.div>
     </>
