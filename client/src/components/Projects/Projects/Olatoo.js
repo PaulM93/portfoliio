@@ -103,7 +103,7 @@ export default function Olatoo({ completed }) {
           firestore document. Email verification from the user is required to
           book an Olatoo class but this feature has been turned off due to
           testing. A user books a class using the booking modal found on each
-          tutor card. A class type, date and time is chosen and the class is
+          tutor card. A class type, date and time are chosen and the class is
           then booked and saved to the database under the bookings collection.
           The booking is also added to the relevant tutor document to ensure it
           can be filtered and removed to prevent bookings at the same time.
@@ -111,12 +111,12 @@ export default function Olatoo({ completed }) {
         <Text fontSize="sm" color="primaryMute">
           Time Zones were also considered with tutors and students coming from
           different parts of the world. This was handled upon signup using
-          Intl.DateTimeFormat().resolvedOptions().timeZone. The user does not
-          have the capability to set their own timezone but if a timezone change
-          was noted this was automatically updated. The relevant timezone was
-          then applied to React Calendar using various util functions to show
-          class time slots at the correct timezone for the user. MomentJS was
-          also used to handle date and time formatting.
+          Intl.DateTimeFormat().resolvedOptions().timeZone. The user cannot set
+          their timezone but if a timezone change was noted this was
+          automatically updated. The relevant timezone was then applied to React
+          Calendar using various util functions to show class time slots at the
+          correct timezone for the user. MomentJS was also used to handle date
+          and time formatting.
         </Text>
       </Box>
       <Box mb={5}>
@@ -127,7 +127,7 @@ export default function Olatoo({ completed }) {
           The user dashboard gives the user access to their bookings and profile
           information. From here they may update their profile information, edit
           profile picture, change their password or email address, deactivate
-          their account, view their favorited tutors or view their upcoming and
+          their account, view their favourite tutors or view their upcoming and
           completed bookings.The student may also book classes with tutors
           directly from their dashboard. The tutor dashboard also provides
           similar functionality to the student dashboard.
@@ -151,8 +151,8 @@ export default function Olatoo({ completed }) {
         </Heading>
         <Text fontSize="sm" color="primaryMute">
           Although I am satisfied with what I have been able to achieve in
-          building Olatoo, it was my first project and now with more knowledge I
-          may have considered other options to build the app. I am not happy
+          building Olatoo, it was my first project and now with more knowledge,
+          I may have considered other options to build the app. I am not happy
           with the folder structure and layout of my code but I put this down to
           lack of experience. I had originally built the app with CreateReactApp
           not knowing that this was not good for SEO purposes so I migrated

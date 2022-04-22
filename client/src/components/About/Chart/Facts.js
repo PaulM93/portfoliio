@@ -5,9 +5,10 @@ import Interests from "./Interests";
 
 export default function Facts({ duration }) {
   const facts = [
-    "I like to play the guitar.",
-    "I can speak Spanish.",
-    "I am learning how to speak Portuguese.",
+    "I enjoy playing the guitar.",
+    "I am a fully fluent self-taught Spanish speaker.",
+    "I am currently learning how to speak Portuguese.",
+    "I have no relation to Bob Marley 😑",
   ];
 
   let markup = facts.map((i) => <ListItem fontSize={"md"}>{i}</ListItem>);

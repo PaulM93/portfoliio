@@ -11,24 +11,28 @@ export default function About({ duration }) {
         transition={{ duration: duration }}
       >
         <Text
-          fontSize="md"
+          // fontSize="md"
           color="secondary"
           fontWeight={"700"}
           mb={5}
           w={["100%", "100%", "80%", "80%"]}
           letterSpacing={"1px"}
         >
-          My name is Paul Marley and I am a Full Stack Junior developer based in
-          Medellin, Colombia. Currently I'm working at Olatoo.com helping folks
-          level up their Spanish 👋
+          My name is Paul Marley and I am a self taught developer from Scotland
+          with a solid understanding of Javascript, CSS and ReactJS. I am
+          currently expanding my skill set by studying Typescript and have taken
+          interest in how animation can be used to provide a greater UI
+          experience.
         </Text>
         <Text mb={4} fontSize="md" color="primaryMute" fontWeight={"500"}>
-          I have an MSC in Hydrogeology and I am fluent in Spanish. I am
-          currently learning Portuguese and enjoy playing the guitar.
+          I am particularly interested in app UI design and strive to create the
+          most aesthetically pleasing apps as possible.
         </Text>
         <Text fontSize="md" color="primaryMute" fontWeight={"500"}>
-          I am particulary interested in app design and am in the process of
-          learning how to build one. I love to learn.
+          My goal is to continuously grow as a developer while staying current
+          with the latest trends and technologies. I would love to work for a
+          team that is truly passionate about what they create and that is
+          striving consistently to move forward.l
         </Text>
       </motion.div>
     </>

@@ -59,9 +59,10 @@ export default function Education({ duration }) {
           mb={10}
         >
           <span style={{ fontWeight: 700, marginRight: "5px" }}>
-            Education is something I value and although I don't have any degree
-            related to development I feel like I have found a passion.
+            “Education is not preparation for life; education is life itself.”
+            —John Dewey.
           </span>
+          <br />
           <span style={{ fontWeight: 500, color: "#98a0b3" }}>
             Below you will find an overview of my degrees.
           </span>

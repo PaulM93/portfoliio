@@ -7,9 +7,9 @@ import { myNewTheme } from "./theme";
 import LanguageWrapper from "./components/Languages/LanguageWrapper";
 //Fonts
 import "@fontsource/raleway/400.css";
+// import "@fontsource/opsn/400.css";
 import "@fontsource/raleway/700.css";
 import "@fontsource/raleway/500.css";
-import "@fontsource/merriweather";
 //Components
 import NavBar from "./components/Navbar/Index";
 import Layout from "./components/Layout";
