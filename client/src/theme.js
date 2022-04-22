@@ -15,6 +15,6 @@ export const myNewTheme = extendTheme({
   },
   fonts: {
     heading: "Raleway",
-    // body: "Raleway",
+    body: "Open Sans",
   },
 });

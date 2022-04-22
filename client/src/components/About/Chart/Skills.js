@@ -134,8 +134,8 @@ export default function Skills({ duration }) {
               Below you will find a brief overview of my current skill set.
             </span>
             <span style={{ fontWeight: 500, color: "#98a0b3" }}>
-              At the moment I am in the process of learning typescript and
-              framer-motion.
+              At the moment I am in the process of learning Typescript and
+              Framer-Motion.
             </span>
           </Text>
           <Button
