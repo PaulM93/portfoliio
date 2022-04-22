@@ -5,11 +5,16 @@ import { Flex } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 import Subtitle from "../util/Subtitle";
 import MotionWrapper from "../MotionWrapper";
+//Portfolio
+import Olatoo from "./Projects/Olatoo";
+import MVPT from "./Projects/MVPT";
+import Portfolio from "./Projects/Portfolio";
 
 export default function Index({ projectRef }) {
   const content = [
     {
       completed: true,
+      projectInfo: <Olatoo completed={true} />,
       title: "Olatoo",
       hashtags: [
         "React",
@@ -18,55 +23,54 @@ export default function Index({ projectRef }) {
         "Firebase",
         "MaterialUI",
         "MomentJS",
+        "Axios",
         "Stripe",
         "AdobeXD",
         "Photoshop",
         "SendGrid",
+        "Vercel",
+        "React Calendar",
+        "Responsive Design",
       ],
-      listItems: [
-        "Designed the web app with AdobeXD andphotoshop.",
-        "Front end responsive design code with materialUI.",
-        "Built a timezone responsive booking system with integration of stripe subscriptions.",
-        "I did everything basically.",
-      ],
-      body: "Olatoo is an online Spanish language learning platform where you can connect with professional tutors from all across Latin America for one-to-one conversational Spanish classes. Users sign up to the site via facebook, google or email and then have the ability to take 3 free trial classes through zoom. Once completed users may pay for a subscription plan via Stripe which gives them access to lesson credits.",
       link: "https://www.olatoo.com/",
-      github: "",
+      github: "https://github.com/PaulM93/Olatoo",
     },
     {
       completed: false,
+      projectInfo: <MVPT completed={false} />,
       title: "MVPT",
       hashtags: [
         "React",
         "NextJS",
-        "Firestore",
+        "MongoDB",
         "Firebase",
-        "MaterialUI",
+        "ChakraUI",
         "MomentJS",
         "Stripe",
         "AdobeXD",
         "Photoshop",
         "SendGrid",
+        "Axios",
+        "Responsive Design",
       ],
-      listItems: [
-        "Designed the web app with AdobeXD andphotoshop.",
-        "Front end responsive design code with materialUI.",
-        "Built a timezone responsive booking system with integration of stripe subscriptions.",
-        "I did everything basically.",
-      ],
-      body: "Olatoo is an online Spanish language learning platform where you can connect with professional tutors from all across Latin America for one-to-one conversational Spanish classes. Users sign up to the site via facebook, google or email and then have the ability to take 3 free trial classes through zoom. Once completed users may pay for a subscription plan via Stripe which gives them access to lesson credits.",
-      link: "https://www.olatoo.com/",
+      link: "",
       github: "",
     },
     {
       completed: true,
+      projectInfo: <Portfolio completed={true} />,
       title: "Portfolio",
       hashtags: [
         "React",
         "Create React App",
         "AdobeXD",
         "Framer-motion",
+        "Nodemailer",
         "Charka UI",
+        "Heroku",
+        "NodeJS",
+        "Express",
+        "Axios",
       ],
       listItems: [
         "Designed the web app with AdobeXD andphotoshop.",
@@ -83,6 +87,7 @@ export default function Index({ projectRef }) {
   const cardMarkup = content.map((i) => (
     <ProjectCard
       completed={i.completed}
+      projectInfo={i.projectInfo}
       title={i.title}
       body={i.body}
       hashtags={i.hashtags}
