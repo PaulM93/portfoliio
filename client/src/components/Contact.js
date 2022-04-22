@@ -3,7 +3,6 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import {
   Heading,
-  HStack,
   Flex,
   FormLabel,
   FormControl,
@@ -15,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 //Components
 import Subtitle from "./util/Subtitle";
-import MotionWrapper from "./MotionWrapper";
+import MotionWrapper from "./util/MotionWrapper";
 
 export default function Contact({ contactRef }) {
   const toast = useToast();
@@ -123,8 +122,6 @@ export default function Contact({ contactRef }) {
     </motion.button>
   );
 
-  console.log("errors outside", errors);
-
   return (
     <>
       <div ref={contactRef} style={{ paddingTop: "100px" }} />
@@ -137,7 +134,7 @@ export default function Contact({ contactRef }) {
           mb={["150px", "150px", "100px", "100px"]}
         >
           <Flex
-            w={["85%", "70%", "60%", "70%"]}
+            w={["100%", "70%", "60%", "70%"]}
             flexDir="column"
             alignItems="center"
             textAlign={"center"}
@@ -148,8 +145,13 @@ export default function Contact({ contactRef }) {
             <Heading size="lg" mb={10} textAlign="center" color="primaryMute">
               How can I help you today?
             </Heading>
-            <HStack mb={10} spacing={4} w="100%">
-              <FormControl htmlFor="name" isRequired isInvalid={errors.name}>
+            <Flex mb={5} spacing={4} w="100%">
+              <FormControl
+                htmlFor="name"
+                isRequired
+                isInvalid={errors.name}
+                mr={4}
+              >
                 <FormLabel color="primaryMute" htmlFor="email">
                   Name
                 </FormLabel>
@@ -166,7 +168,7 @@ export default function Contact({ contactRef }) {
                   type="text"
                 />
                 {errors.name ? (
-                  <FormErrorMessage color="red.300">
+                  <FormErrorMessage color="red.300" size="sm">
                     Your name is required.
                   </FormErrorMessage>
                 ) : (
@@ -196,7 +198,7 @@ export default function Contact({ contactRef }) {
                   ""
                 )}
               </FormControl>
-            </HStack>
+            </Flex>
             <FormControl isInvalid={errors.message} mb={10}>
               <Textarea
                 resize="vertical"
@@ -207,11 +209,11 @@ export default function Contact({ contactRef }) {
                 size="lg"
                 onChange={handleChange}
                 id="message"
-                placeholder="Say hello!"
+                placeholder="Send me a message!"
               />
               {errors.message ? (
                 <FormErrorMessage color="red.300">
-                  Please say hello
+                  A message is required :)
                 </FormErrorMessage>
               ) : (
                 ""

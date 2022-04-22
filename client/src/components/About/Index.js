@@ -3,7 +3,7 @@ import React from "react";
 import { Flex } from "@chakra-ui/react";
 //Components
 import Subtitle from "../util/Subtitle";
-import MotionWrapper from "../MotionWrapper";
+import MotionWrapper from "../util/MotionWrapper";
 import Chart from "./Chart/Chart";
 import "../../App.css";
 
@@ -14,7 +14,7 @@ export default function Index({ aboutRef }) {
       <MotionWrapper>
         <Flex
           minWidth={"100%"}
-          minHeight={["", "", "100vh", "100vh"]}
+          minHeight={["", "", "", "100vh"]}
           mb={["150px"]}
           flexDir="column"
           alignItems="center"

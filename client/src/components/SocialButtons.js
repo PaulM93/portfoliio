@@ -34,12 +34,12 @@ export default function SocialButtons({ type, shouldShowActions }) {
   const socialIcons = [
     {
       name: "facebook",
-      val: "https://www.facebook.com/",
+      val: "https://www.facebook.com/paul.marley.7792/",
       icon: <FaFacebookF />,
     },
     {
       name: "github",
-      val: "https://github.com/",
+      val: "https://github.com/PaulM93",
       icon: <FaGithub />,
     },
     {

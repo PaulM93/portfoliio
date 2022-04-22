@@ -5,6 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { render } from "@testing-library/react";
 
+if (process.env.NODE_ENV === "production") {
+  console.log = () => {};
+  console.error = () => {};
+  console.debug = () => {};
+}
+
 const rootElement = document.getElementById("root");
 render(<App />, rootElement);
 

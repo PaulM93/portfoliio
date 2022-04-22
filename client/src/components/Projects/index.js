@@ -4,7 +4,7 @@ import { Flex } from "@chakra-ui/react";
 //Components
 import ProjectCard from "./ProjectCard";
 import Subtitle from "../util/Subtitle";
-import MotionWrapper from "../MotionWrapper";
+import MotionWrapper from "../util/MotionWrapper";
 //Portfolio
 import Olatoo from "./Projects/Olatoo";
 import MVPT from "./Projects/MVPT";
@@ -113,7 +113,6 @@ export default function Index({ projectRef }) {
             width={"100%"}
             display="flex"
             justify={"center"}
-            // minHeight={"300px"}
             mb={["150px", "150px", "200px", "200px"]}
             flexWrap="wrap"
           >
