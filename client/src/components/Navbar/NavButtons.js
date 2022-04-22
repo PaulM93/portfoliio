@@ -27,8 +27,8 @@ export default function NavButtons({ aboutRef, projectRef, contactRef }) {
   };
 
   console.log("position", position);
-  const buttonArr = ["home", "about", "work", "contact"];
-  const buttonWidth = 75;
+  const buttonArr = ["home", "about", "projects", "contact"];
+  const buttonWidth = 77;
   const projectPos = buttonWidth * 2;
   const contactPos = buttonWidth * 3;
 
@@ -42,7 +42,7 @@ export default function NavButtons({ aboutRef, projectRef, contactRef }) {
         scrollEffect(aboutRef);
         setPosition(buttonWidth);
         break;
-      case "work":
+      case "projects":
         scrollEffect(projectRef);
         setPosition(projectPos);
         break;

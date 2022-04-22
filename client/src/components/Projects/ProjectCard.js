@@ -8,20 +8,11 @@ import {
   Button,
   Link,
   Tag,
-  Text,
-  List,
   Icon,
   Tooltip,
-  ListIcon,
-  ListItem,
   Divider,
 } from "@chakra-ui/react";
-import {
-  AddIcon,
-  CloseIcon,
-  CheckCircleIcon,
-  ExternalLinkIcon,
-} from "@chakra-ui/icons";
+import { AddIcon, CloseIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import { FaGithub } from "react-icons/fa";
 
 export default function ProjectCard({
@@ -76,10 +67,7 @@ export default function ProjectCard({
       <Box
         mr={["0px", "0px", "10px", "10px"]}
         mb={"10px"}
-        w={
-          !isOpen ? ["100%", "100%", "250px", "250px"] : ["100%"]
-          // : ["100%", "100%", "48%", "48%"]
-        }
+        w={!isOpen ? ["100%", "100%", "250px", "250px"] : ["100%"]}
       >
         <motion.div
           transition={{ layout: { duration: 0.5 } }}
@@ -124,7 +112,9 @@ export default function ProjectCard({
                   />
                 </motion.div>
               </div>
-              <Box minHeight={!isOpen ? "180px" : ""}>{tagMarkup}</Box>
+              <Box minHeight={!isOpen ? ["", "", "180px", "180px"] : ""}>
+                {tagMarkup}
+              </Box>
             </div>
 
             {/* Content */}
