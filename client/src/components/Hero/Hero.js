@@ -44,12 +44,12 @@ export default function Home() {
             </Flex>
           </Heading>
           <Heading size={"lg"} style={{ color: "#98a0b3" }} mb={5}>
-            I am a Full Stack Junior developer based in Medellin, Colombia.
-            Currently I'm working at{" "}
+            I am a self-taught full-stack junior developer based in Medellin,
+            Colombia. I am the founder and lead developer/designer of{" "}
             <Link href={"https://www.olatoo.com/"} isExternal>
               Olatoo.com
             </Link>{" "}
-            helping folks level up their Spanish.
+            a web app aimed at helping folks level up their Spanish.
           </Heading>
           <Flex>
             <SocialButtons />

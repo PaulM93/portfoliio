@@ -59,8 +59,8 @@ export default function Education({ duration }) {
           mb={10}
         >
           <span style={{ fontWeight: 700, marginRight: "5px" }}>
-            “Education is not preparation for life; education is life itself.”
-            —John Dewey.
+            “Education is not preparation for life; education is life itself.” —
+            John Dewey.
           </span>
           <br />
           <span style={{ fontWeight: 500, color: "#98a0b3" }}>

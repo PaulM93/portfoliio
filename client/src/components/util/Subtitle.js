@@ -36,7 +36,11 @@ export default function Subtitle({ hand, sentence, secondaryText }) {
       >
         {title}
       </HStack>
-      <Heading color="secondary" display={["flex", "flex", "flex", "none"]}>
+      <Heading
+        size="lg"
+        color="secondary"
+        display={["flex", "flex", "flex", "none"]}
+      >
         {sentence} {hand ? "👋" : ""}
       </Heading>
       <Text align="center" color="primaryMute" fontSize="md" mb={12}>

@@ -9,7 +9,7 @@ import ChartButtons from "./ChartButtons";
 import { Flex } from "@chakra-ui/react";
 
 export default function Chart() {
-  const [selected, setSelected] = useState("Skills");
+  const [selected, setSelected] = useState("About");
 
   const animateDur = 1.5;
   let markup;
@@ -43,7 +43,6 @@ export default function Chart() {
           minW="100%"
           border="2px solid #23272F"
           bg="cardBackground"
-          // bg="green"
         >
           {markup}
         </Flex>

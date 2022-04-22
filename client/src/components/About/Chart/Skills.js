@@ -145,7 +145,7 @@ export default function Skills({ duration }) {
             size="xs"
             onClick={() => setDisplay(!display)}
           >
-            In Depth
+            {display ? "In Depth" : "Go back"}
           </Button>
         </Flex>
         <Box minHeight="210px">{chartMarkup}</Box>
@@ -156,7 +156,7 @@ export default function Skills({ duration }) {
           size="xs"
           onClick={() => setDisplay(!display)}
         >
-          In Depth
+          {display ? "In Depth" : "Go back"}
         </Button>
       </motion.div>
     </>

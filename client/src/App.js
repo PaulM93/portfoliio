@@ -4,7 +4,7 @@ import "./App.css";
 import { ColorModeScript, ChakraProvider } from "@chakra-ui/react";
 import { myNewTheme } from "./theme";
 //Languages
-import LanguageWrapper from "./components/Languages/LanguageWrapper";
+// import LanguageWrapper from "./components/Languages/LanguageWrapper";
 //Fonts
 import "@fontsource/raleway/400.css";
 // import "@fontsource/opsn/400.css";
