@@ -48,6 +48,8 @@ export default function Contact({ contactRef }) {
     return formIsValid;
   };
 
+  const test = "test";
+
   const [loading, setLoading] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
