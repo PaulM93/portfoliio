@@ -16,15 +16,20 @@ import {
   ListItem,
   Divider,
 } from "@chakra-ui/react";
-import { AddIcon, CloseIcon, CheckCircleIcon } from "@chakra-ui/icons";
+import {
+  AddIcon,
+  CloseIcon,
+  CheckCircleIcon,
+  ExternalLinkIcon,
+} from "@chakra-ui/icons";
 import { FaGithub } from "react-icons/fa";
 
 export default function ProjectCard({
   completed,
   title,
   hashtags,
-  listItems,
-  body,
+  projectInfo,
+  github,
   link,
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,22 +55,6 @@ export default function ProjectCard({
     </motion.button>
   ));
 
-  const listMarkup = (
-    <List fontSize="sm" color="primaryMute" mb={5}>
-      {listItems.map((text) => (
-        <>
-          <ListItem key={text}>
-            <ListIcon
-              as={CheckCircleIcon}
-              color={completed ? "primary" : "orange.300"}
-            />
-            {text}
-          </ListItem>
-        </>
-      ))}
-    </List>
-  );
-
   const projectStatusTag = (
     <Tag
       size="md"
@@ -73,7 +62,7 @@ export default function ProjectCard({
       variant="solid"
       colorScheme={completed ? "facebook" : "orange"}
     >
-      {completed === "completed" ? "Project Completed" : "In Progress"}
+      {completed ? "Project Completed" : "In Progress"}
     </Tag>
   );
   const projectStatusToolTip = (
@@ -88,9 +77,8 @@ export default function ProjectCard({
         mr={["0px", "0px", "10px", "10px"]}
         mb={"10px"}
         w={
-          !isOpen
-            ? ["100%", "100%", "250px", "250px"]
-            : ["100%", "100%", "48%", "48%"]
+          !isOpen ? ["100%", "100%", "250px", "250px"] : ["100%"]
+          // : ["100%", "100%", "48%", "48%"]
         }
       >
         <motion.div
@@ -136,7 +124,7 @@ export default function ProjectCard({
                   />
                 </motion.div>
               </div>
-              <Box style={{ marginBottom: "0px" }}>{tagMarkup}</Box>
+              <Box minHeight={!isOpen ? "180px" : ""}>{tagMarkup}</Box>
             </div>
 
             {/* Content */}
@@ -147,13 +135,7 @@ export default function ProjectCard({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <Text fontSize="sm" mb={5} color="secondary">
-                  {body}
-                </Text>
-                <Text mb={4} fontWeight={500} fontSize="sm" color="secondary">
-                  What I did:
-                </Text>
-                {listMarkup}
+                {projectInfo}
               </motion.div>
             ) : (
               ""
@@ -170,8 +152,9 @@ export default function ProjectCard({
                   layout
                   transition={{ layout: { duration: 0.5 } }}
                 >
-                  <Link>
+                  <Link href={github} isExternal>
                     <IconButton
+                      disabled={!completed}
                       colorScheme={"whiteAlpha"}
                       mr={2}
                       variant="outline"
@@ -185,13 +168,16 @@ export default function ProjectCard({
                   layout
                   transition={{ layout: { duration: 0.5 } }}
                 >
-                  <Button
-                    colorScheme={"whiteAlpha"}
-                    variant="outline"
-                    size="sm"
-                  >
-                    View Project
-                  </Button>
+                  <Link href={link} isExternal>
+                    <Button
+                      disabled={!completed}
+                      colorScheme={"whiteAlpha"}
+                      variant="outline"
+                      size="sm"
+                    >
+                      View Project
+                    </Button>
+                  </Link>
                 </motion.button>
               </div>
             </div>
