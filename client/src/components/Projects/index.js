@@ -11,6 +11,7 @@ import MVPT from "./Projects/MVPT";
 import Portfolio from "./Projects/Portfolio";
 
 export default function Index({ projectRef }) {
+  const test = "f";
   const content = [
     {
       completed: true,
