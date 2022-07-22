@@ -4,12 +4,12 @@ import { Tag, Box, Heading, Wrap, WrapItem } from "@chakra-ui/react";
 
 export default function Interests() {
   const interestsArr = [
-    "Web Design",
+    "Web Design 💻",
     "Coffee ☕",
-    "Language Learning",
+    "Language Learning 🌐",
     "Travel 🌎",
-    "Gym",
-    "Crypto",
+    "Gym 💪",
+    "Crypto ₿",
   ];
 
   return (

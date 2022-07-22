@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 //Logos
-import { Flex, Text, Box, Button, Wrap } from "@chakra-ui/react";
+import { Flex, Text, Box, Wrap } from "@chakra-ui/react";
 //Component
 import Skill from "./Skill";
 //Images
@@ -24,8 +24,6 @@ const AdobeXD = require("../../../assets/adobexd.png");
 const MongoDB = require("../../../assets/mongodb.png");
 
 export default function Skills({ duration }) {
-  const [display, setDisplay] = useState(true);
-
   const chartValues = [
     {
       title: "Web Design",
@@ -67,54 +65,6 @@ export default function Skills({ duration }) {
     },
   ];
 
-  const chartMarkup = chartValues.map((val) => (
-    <Box mb={6}>
-      <Flex justify={"space-between"} mb="2">
-        <Text color="secondary" fontSize="sm">
-          {val.title}
-        </Text>
-        {display ? (
-          <Text color="secondary" fontSize="sm">
-            {val.percentage}%
-          </Text>
-        ) : null}
-      </Flex>
-      {display ? (
-        <div
-          style={{
-            height: "15px",
-            borderRadius: "10px",
-            width: "100%",
-            background: "#EDE8FD",
-          }}
-        >
-          <motion.div
-            style={{
-              background: "#5686F5",
-              borderRadius: "10px",
-              height: "100%",
-              width: "10%",
-            }}
-            animate={{ width: `${val.percentage}%` }}
-            transition={{ duration: 2 }}
-          ></motion.div>
-        </div>
-      ) : (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: display ? 0 : 1 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Wrap width={"100%"}>
-            {val.images.map((i) => (
-              <Skill name={i.name} image={i.image} size={"25px"} />
-            ))}
-          </Wrap>
-        </motion.div>
-      )}
-    </Box>
-  ));
-
   return (
     <>
       <motion.div
@@ -138,26 +88,29 @@ export default function Skills({ duration }) {
               Framer-Motion.
             </span>
           </Text>
-          <Button
-            variant={display ? "outline" : "solid"}
-            colorScheme={"blue"}
-            display={["none", "none", "flex", "flex"]}
-            size="xs"
-            onClick={() => setDisplay(!display)}
-          >
-            {display ? "In Depth" : "Go back"}
-          </Button>
         </Flex>
-        <Box minHeight="210px">{chartMarkup}</Box>
-        <Button
-          variant={display ? "outline" : "solid"}
-          colorScheme={"blue"}
-          display={["flex", "flex", "none", "none"]}
-          size="xs"
-          onClick={() => setDisplay(!display)}
-        >
-          {display ? "In Depth" : "Go back"}
-        </Button>
+        <Box minHeight="210px">
+          {chartValues.map((val) => (
+            <Box mb={6}>
+              <Flex justify={"space-between"} mb="2">
+                <Text color="secondary" fontSize="sm">
+                  {val.title}
+                </Text>
+              </Flex>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Wrap width={"100%"}>
+                  {val.images.map((i) => (
+                    <Skill name={i.name} image={i.image} size={"25px"} />
+                  ))}
+                </Wrap>
+              </motion.div>
+            </Box>
+          ))}
+        </Box>
       </motion.div>
     </>
   );
