@@ -1,0 +1,253 @@
+[{
+    "title": "Olatoo",
+    "completed": true,
+    "hashtags": [
+        "React",
+        "NextJS",
+        "Firestore",
+        "Firebase",
+        "MaterialUI",
+        "MomentJS",
+        "Axios",
+        "Stripe",
+        "AdobeXD",
+        "Photoshop",
+        "SendGrid",
+        "Vercel",
+        "React Calendar",
+        "Responsive Design"
+    ],
+    "projectInfo": {
+            "functionality": [
+                "A user signs up to Olatoo using Facebook, Google or email all of which are handled through firebase authentication. Email authentication is then required which is also handled by firebase. ",
+            "The user has access to three free trial classes. These may be booked directly from the tutor dashboard through booking buttons found on tutor cards.",
+            "The user can access their booking information on their dashboard. An email with booking information is sent to the user and tutor through sendgrid.. The user has the option to cancel their lesson up to one hour before it is due to take place.",
+            "At the time of the booking the user connects to the class from their Olatoo dashboard through the click of a button to zoom using the personal meeting ID of the tutor.",
+            "If the user is satisfied with their trial lesson they may then purchase class credits. This is handled through the firebase stripe subscription extension. Lesson credits are automatically renewed on a monthly basis."
+            ],
+            "info": [
+                {
+                    "title": "Description",
+                    "description":
+                      "Olatoo is an online Spanish language learning platform where you can connect with professional tutors from all across Latin America for one-to-one conversational Spanish classes."
+                },
+                {
+                    "title": "Technology",
+                    "description":
+                      "Olatoo is built using Next.JS due to its server side rendering capabilities which are essential for search engine optimization. Firebase was also used due to its ease of use in providing access to firebase authentication, the firestore cloud database and the stripe subscription extension. As the app was built with Next.JS it felt logical to deploy it using Vercel as Next.JS was built by the same team."
+                  },
+                  {
+                    "title": "Design Process",
+                    "description":
+                      "The app layout was designed using AdobeXD with photoshop used to edit images and icons. MaterialUI was used to style the app due to its ease of use, customisation options and vast amount of components."
+                  },
+                  {
+                    "title": "Authentication",
+                    "description":
+                      "User authentication for Olatoo is handled by firebase authentication with users having the options of Facebook, Google or email."
+                  },
+                  {
+                    "title": "Booking System",
+                    "description":
+                      "A user who signs up to Olatoo is given 3 free trial classes which may be booked on signup or through the booking process on the user dashboard. If a user books a trial class upon signup they must select a tutor country, date and time. Relevant tutors are then filtered using firestore web api and once the user has entered their authentication details a class is assigned to a tutor at random. The user also has the option to choose which tutor they want their classes to be with using the booking buttons found on tutor cards."
+                  },
+                  {
+                    "title": "Class Bookings",
+                    "description":
+                      "Upon account creation user information is saved to firestore and a stripe customer account is created which is linked to the relevant firestore document. Email verification from the user is required to book an Olatoo class but this feature has been turned off due to testing. A user books a class using the booking modal found on each tutor card. A class type, date and time are chosen and the class is then booked and saved to the database under the bookings collection. The booking is also added to the relevant tutor document to ensure it can be filtered and removed to prevent bookings at the same time."
+                  },
+                  {
+                    "title": "",
+                    "description":
+                      "Time Zones were also considered with tutors and students coming from different parts of the world. This was handled upon signup using Intl.DateTimeFormat().resolvedOptions().timeZone. The user cannot set their timezone but if a timezone change was noted this was automatically updated. The relevant timezone was then applied to React Calendar using various util functions to show class time slots at the correct timezone for the user. MomentJS was also used to handle date and time formatting."
+                  },
+                  {
+                    "title": "Student Dashboard",
+                    "description":
+                      "The user dashboard gives the user access to their bookings and profile information. From here they may update their profile information, edit profile picture, change their password or email address, deactivate their account, view their favourite tutors or view their upcoming and completed bookings.The student may also book classes with tutors directly from their dashboard. The tutor dashboard also provides similar functionality to the student dashboard."
+                  },
+                  {
+                    "title": "Subscription Payments",
+                    "description":
+                      "If a user decides they want to purchase an Olatoo lesson plan this is handled with the stripe subscription extension which is linked to a custom stripe checkout. Once a plan is purchased, lesson credits are added to the user’s account and refreshed on a monthly basis. Lesson credits are added using metadata."
+                  },
+                  {
+                    "title": "Subscription Payments",
+                    "description":
+                      "If a user decides they want to purchase an Olatoo lesson plan this is handled with the stripe subscription extension which is linked to a custom stripe checkout. Once a plan is purchased, lesson credits are added to the user’s account and refreshed on a monthly basis. Lesson credits are added using metadata."
+                  }
+            ]
+        
+    },
+    "link": "https://www.olatoo.com/",
+    "github": "https://github.com/PaulM93/Olatoo"
+},
+{
+    "title": "MVPT",
+    "completed": false,
+    "hashtags": [
+        "React",
+        "NextJS",
+        "MongoDB",
+        "Firebase",
+        "ChakraUI",
+        "MomentJS",
+        "Stripe",
+        "AdobeXD",
+        "Photoshop",
+        "SendGrid",
+        "Axios",
+        "Responsive Design"
+    ],
+    "projectInfo": {
+            "functionality": [
+                "Authentication will be handled with Firebase Authentication",
+                "Payments for sessions and training products will be handled by Stripe.",
+                "Online training sessions will be handled using the Zoom Api to generate individual meetings for each session booked."
+            ],
+            "info": [
+                {
+                    "title": "Description",
+                    "description":
+                      "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
+                },
+                {
+                    "title": "Technology",
+                    "description":
+                      "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
+                  },
+                  {
+                    "title": "Design Process",
+                    "description":
+                      "The app is being designed with AdobeXD with the design framework ChakraUI."
+                  }
+            ]
+        
+    },
+    "link": "",
+    "github": ""
+},
+{
+    "title": "Porftolio",
+    "completed": true,
+    "hashtags": [
+        "React",
+        "Create React App",
+        "AdobeXD",
+        "Framer-motion",
+        "Nodemailer",
+        "Chakra UI",
+        "Heroku",
+        "NodeJS",
+        "Express",
+        "Axios"
+    ],
+    "projectInfo": {
+            "functionality": [],
+            "info": [
+                {
+                    "title": "Description",
+                    "description":
+                      "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
+                },
+                {
+                    "title": "Technology",
+                    "description":
+                      "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
+                  },
+                  {
+                    "title": "Design Process",
+                    "description":
+                      "The app is being designed with AdobeXD with the design framework ChakraUI."
+                  }
+            ]
+        
+    },
+    "link": "",
+    "github": "https://github.com/PaulM93/portfoliio"
+},
+{
+    "title": "Gatsby Blog",
+    "completed": false,
+    "hashtags": [
+        "React",
+        "Create React App",
+        "AdobeXD",
+        "Framer-motion",
+        "Nodemailer",
+        "Chakra UI",
+        "Heroku",
+        "NodeJS",
+        "Express",
+        "Axios"
+    ],
+    "projectInfo": {
+            "functionality": [],
+            "info": [
+                {
+                    "title": "Description",
+                    "description":
+                      "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
+                },
+                {
+                    "title": "Technology",
+                    "description":
+                      "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
+                  },
+                  {
+                    "title": "Design Process",
+                    "description":
+                      "The app is being designed with AdobeXD with the design framework ChakraUI."
+                  }
+            ]
+        
+    },
+    "link": "",
+    "github": "https://github.com/PaulM93/portfoliio"
+},
+{
+    "title": "Spaced",
+    "completed": true,
+    "hashtags": [
+        "React",
+        "Create React App",
+        "AdobeXD",
+        "Framer-motion",
+        "ChakraUI",
+        "MySQL",
+        "JWT",
+        "Supermemo",
+        "Redux", 
+        "Redux Toolkit",
+        "Typescript",
+        "Day.js",
+        "NodeJS",   
+        "Express",
+        "bcrypt",
+        "Axios"
+    ],
+    "projectInfo": {
+            "functionality": [],
+            "info": [
+                {
+                    "title": "Description",
+                    "description":
+                      "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
+                },
+                {
+                    "title": "Technology",
+                    "description":
+                      "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
+                  },
+                  {
+                    "title": "Design Process",
+                    "description":
+                      "The app is being designed with AdobeXD with the design framework ChakraUI."
+                  }
+            ]
+        
+    },
+    "link": "",
+    "github": "https://github.com/PaulM93/portfoliio"
+}
+]
