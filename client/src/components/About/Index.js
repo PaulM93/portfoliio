@@ -5,7 +5,6 @@ import { Flex } from "@chakra-ui/react";
 import Subtitle from "../util/Subtitle";
 import MotionWrapper from "../util/MotionWrapper";
 import Chart from "./Chart/Chart";
-import "../../App.css";
 
 export default function Index({ aboutRef }) {
   return (
