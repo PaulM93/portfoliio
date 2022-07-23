@@ -1,13 +1,8 @@
-import React, { useRef, useEffect } from "react";
-import axios from "axios";
-import "./App.css";
+import React, { useRef } from "react";
 import { ColorModeScript, ChakraProvider } from "@chakra-ui/react";
 import { myNewTheme } from "./theme";
-//Languages
-// import LanguageWrapper from "./components/Languages/LanguageWrapper";
 //Fonts
 import "@fontsource/raleway/400.css";
-// import "@fontsource/opsn/400.css";
 import "@fontsource/raleway/700.css";
 import "@fontsource/raleway/500.css";
 //Components
@@ -24,22 +19,10 @@ function App() {
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
 
-  useEffect(() => {
-    axios
-      .get("/api")
-      .then((res) => {
-        console.log(res.data);
-      })
-      .then((err) => {
-        console.log(err);
-      });
-  }, []);
-
   return (
     <ChakraProvider theme={myNewTheme}>
       {/* <ColorModeScript /> */}
       <ColorModeScript initialColorMode={"dark"} />
-      {/* <LanguageWrapper> */}
       <Layout>
         <NavBar
           aboutRef={aboutRef}
@@ -52,8 +35,6 @@ function App() {
         <Contact contactRef={contactRef} />
         <Footer />
       </Layout>
-
-      {/* </LanguageWrapper> */}
     </ChakraProvider>
   );
 }

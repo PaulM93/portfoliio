@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import { motion } from "framer-motion";
-import { IconButton, Flex, Heading, useColorMode } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import { FiMoon, FiSun } from "react-icons/fi";
 //Components
 import NavButtons from "./NavButtons";
@@ -22,6 +22,8 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
+
+  //Add popup that says hello depending on the time of the day
 
   return (
     <>
