@@ -1,73 +1,39 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import styles from "./Project.module.css";
+import styles from "../Project.module.css";
 import {
   Heading,
   IconButton,
   Box,
   Button,
   Link,
-  Tag,
-  Icon,
-  Tooltip,
   Divider,
+  Text,
 } from "@chakra-ui/react";
-import { AddIcon, CloseIcon, CheckCircleIcon } from "@chakra-ui/icons";
+import { AddIcon, CloseIcon } from "@chakra-ui/icons";
 import { FaGithub } from "react-icons/fa";
+import Tags from "./Tags";
+import ProjectStatus from "./ProjectStatus";
+import ProjectInfo from "../ProjectInfo";
+import Functionality from "../Functionality";
 
 export default function ProjectCard({
   completed,
   title,
   hashtags,
   projectInfo,
+  functionality,
   github,
   link,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  const tagMarkup = hashtags.map((tag) => (
-    <motion.button
-      key={tag}
-      whileHover={{
-        scale: 1.05,
-        transition: { duration: 0.4, type: "spring" },
-      }}
-      layout
-      transition={{ layout: { duration: 0.5 } }}
-    >
-      <Tag
-        colorScheme={"whiteAlpha"}
-        size={!isOpen ? "sm" : "md"}
-        mr={1}
-        mb={1}
-      >
-        {tag}
-      </Tag>
-    </motion.button>
-  ));
-
-  const projectStatusTag = (
-    <Tag
-      size="md"
-      borderRadius="5px"
-      variant="solid"
-      colorScheme={completed ? "facebook" : "orange"}
-    >
-      {completed ? "Project Completed" : "In Progress"}
-    </Tag>
-  );
-  const projectStatusToolTip = (
-    <Tooltip label={completed ? "Project Completed" : "In Progress"}>
-      <Icon as={CheckCircleIcon} color={completed ? "primary" : "orange.300"} />
-    </Tooltip>
-  );
 
   return (
     <>
       <Box
         mr={["0px", "0px", "10px", "10px"]}
         mb={"10px"}
-        w={!isOpen ? ["100%", "100%", "250px", "250px"] : ["100%"]}
+        w={!isOpen ? ["98%", "98%", "250px", "250px"] : ["98%"]}
       >
         <motion.div
           transition={{ layout: { duration: 0.5 } }}
@@ -113,7 +79,7 @@ export default function ProjectCard({
                 </motion.div>
               </div>
               <Box minHeight={!isOpen ? ["", "", "180px", "180px"] : ""}>
-                {tagMarkup}
+                <Tags hashtags={hashtags} isOpen={isOpen} />
               </Box>
             </div>
 
@@ -125,7 +91,27 @@ export default function ProjectCard({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                {projectInfo}
+                <ProjectInfo info={projectInfo} />
+                <Functionality
+                  functionality={functionality}
+                  completed={completed}
+                />
+                <Box mb={5}>
+                  <Heading fontSize="sm" mb={2} color="primary">
+                    Considerations and thoughts
+                  </Heading>
+                  <Text fontSize="sm" color="primaryMute">
+                    Although I am satisfied with what I have been able to
+                    achieve in building Olatoo, it was my first project and now
+                    with more knowledge, I may have considered other options to
+                    build the app. I am not happy with the folder structure and
+                    layout of my code but I put this down to lack of experience.
+                    I had originally built the app with CreateReactApp not
+                    knowing that this was not good for SEO purposes so I
+                    migrated everything over to Next.JS which was a difficult
+                    process.
+                  </Text>
+                </Box>
               </motion.div>
             ) : (
               ""
@@ -135,7 +121,7 @@ export default function ProjectCard({
             <Divider mb={5} />
             <div className={styles.buttonDiv}>
               <motion.div layout transition={{ layout: { duration: 0.5 } }}>
-                {!isOpen ? projectStatusToolTip : projectStatusTag}
+                <ProjectStatus isOpen={isOpen} completed={completed} />
               </motion.div>
               <div>
                 <motion.button
