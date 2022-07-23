@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 //Logos
 import { Flex, Text, Box, Wrap } from "@chakra-ui/react";
@@ -6,6 +6,7 @@ import { Flex, Text, Box, Wrap } from "@chakra-ui/react";
 import Skill from "./Skill";
 //Images
 const ReactLogo = require("../../../assets/react.png");
+const Typescript = require("../../../assets/typescript.png");
 const NodeJS = require("../../../assets/nodejs.png");
 const Stripe = require("../../../assets/stripe.png");
 const JS = require("../../../assets/js.png");
@@ -22,6 +23,10 @@ const NextJS = require("../../../assets/nextjs.png");
 const Photoshop = require("../../../assets/photoshop.png");
 const AdobeXD = require("../../../assets/adobexd.png");
 const MongoDB = require("../../../assets/mongodb.png");
+const MySQL = require("../../../assets/mysql.png");
+const DayJS = require("../../../assets/dayjs.png");
+const Gatsby = require("../../../assets/gatsby.png");
+const Redux = require("../../../assets/redux.png");
 
 export default function Skills({ duration }) {
   const chartValues = [
@@ -39,6 +44,7 @@ export default function Skills({ duration }) {
       images: [
         { name: "Javascript", image: JS },
         { name: "React", image: ReactLogo },
+        { name: "Typescript", image: Typescript },
         { name: "HTML", image: HTML },
         { name: "CSS", image: CSS },
         { name: "ChakraUI", image: Chakra },
@@ -47,20 +53,24 @@ export default function Skills({ duration }) {
         { name: "Framer Motion", image: Framer },
         { name: "Firebase / Firestore", image: Firebase },
         { name: "MomentJS", image: MomentJS },
+        { name: "DayJS", image: DayJS },
         { name: "NextJS", image: NextJS },
+        { name: "Gatsby", image: Gatsby },
+        { name: "Redux", image: Redux },
       ],
     },
     {
       title: "Back-End Development",
       percentage: "70",
       images: [
-        { name: "NodeJS /", image: NodeJS },
+        { name: "NodeJS", image: NodeJS },
         { name: "Stripe", image: Stripe },
-        { name: "Javascript", image: JS },
         { name: "Git", image: GIT },
         { name: "SendGrid", image: SendGrid },
         { name: "NextJS", image: NextJS },
         { name: "MongoDB", image: MongoDB },
+        { name: "MySQL", image: MySQL },
+        { name: "Firebase / Firestore", image: Firebase },
       ],
     },
   ];
@@ -93,7 +103,7 @@ export default function Skills({ duration }) {
           {chartValues.map((val) => (
             <Box mb={6}>
               <Flex justify={"space-between"} mb="2">
-                <Text color="secondary" fontSize="sm">
+                <Text color="secondary" fontSize="sm" fontWeight={500}>
                   {val.title}
                 </Text>
               </Flex>
