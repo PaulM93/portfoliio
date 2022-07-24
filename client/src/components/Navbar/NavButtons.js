@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, LayoutGroup } from "framer-motion";
 import { Flex, Heading } from "@chakra-ui/react";
-
-const spring = {
-  type: "spring",
-  stiffness: 500,
-  damping: 30,
-};
+import { FiGrid, FiUser, FiFolder, FiCoffee } from "react-icons/fi";
 
 export default function NavButtons({
   aboutRef,
@@ -24,15 +19,31 @@ export default function NavButtons({
     });
   };
 
+  const iconStyle = {
+    color: "white",
+    height: "12px",
+  };
+  const [icon, setIcon] = useState(<FiGrid style={iconStyle} />);
   useEffect(() => {
-    //one button = 77
-    //current percent/ 77 * 100
     function handleScroll() {
       const yPos = window.scrollY;
       const isScrollingDown = yPos > 0;
       let pos;
       if (isScrollingDown) {
-        pos = currentPercent * 4.025;
+        pos = currentPercent * 4;
+        if (pos === 0 || pos < 95) {
+          setIcon(<FiGrid style={iconStyle} />);
+        }
+        if (pos > 95 && pos < 190) {
+          setIcon(<FiUser style={iconStyle} />);
+        }
+        if (pos > 190 && pos < 285) {
+          setIcon(<FiFolder style={iconStyle} />);
+        }
+        if (pos > 285) {
+          setIcon(<FiCoffee style={iconStyle} />);
+        }
+
         setPosition(pos < 300 ? pos : 300);
       }
     }
@@ -40,22 +51,7 @@ export default function NavButtons({
     return () => {
       window.removeEventListener("scroll", handleScroll, false);
     };
-
-    //25% === 77
-    //100% === 77 * 4 = 308
-
-    /*
-      At 25% pecentage we want position to be 77 
-    */
-
-    // console.log(pos);
   }, [currentPercent]);
-
-  // console.log("Position", position);
-
-  // console.log("aboutRef", aboutRef);
-  // console.log("projectRef", projectRef.current.offsetHeight);
-  // console.log("contactRef", contactRef);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -64,45 +60,34 @@ export default function NavButtons({
   // console.log("position", position);
   const buttonArr = ["home", "about", "projects", "contact"];
   const buttonWidth = 100;
-  // const buttonWidth = 77;
-  const projectPos = buttonWidth * 2;
-  const contactPos = buttonWidth * 3;
-
-  //If scroll is already initiated
-
-  const [clicked, setClicked] = useState(true);
 
   const handleSelect = (button) => {
     switch (button) {
       case "home":
         scrollToTop();
-        // setPosition("0px");
         break;
       case "about":
         scrollEffect(aboutRef);
-        // setPosition(buttonWidth);
         break;
       case "projects":
         scrollEffect(projectRef);
-        // setPosition(projectPos);
         break;
       case "contact":
         scrollEffect(contactRef);
-        // setPosition(contactPos);
         break;
       default:
     }
   };
 
   const buttonMarkup = buttonArr.map((button) => (
-    <Flex
-      justify="center"
-      align="center"
-      textAlign={"center"}
-      // bg="green"
-      // border="1px"
-      // borderColor="white"
-      w={buttonWidth}
+    <motion.div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        align: "center",
+        position: "relative",
+        width: buttonWidth,
+      }}
       onClick={() => handleSelect(button)}
     >
       <motion.button
@@ -121,7 +106,7 @@ export default function NavButtons({
           {button}
         </Heading>
       </motion.button>
-    </Flex>
+    </motion.div>
   ));
 
   return (
@@ -138,29 +123,22 @@ export default function NavButtons({
               maxWidth: "100%",
               position: "absolute",
               top: 25,
-              // background: "blue",
             }}
           >
             <motion.button
               style={{
-                // background: "red",
                 width: buttonWidth,
                 height: "100%",
                 display: "flex",
                 justifyContent: "center",
               }}
-              animate={{ x: position }}
-              transistion={spring}
+              animate={{
+                x: position,
+              }}
+              transistion={{ type: "spring", bounce: 10 }}
               justify="center"
             >
-              <div
-                style={{
-                  height: "7px",
-                  width: "7px",
-                  background: "white",
-                  borderRadius: 7 / 2,
-                }}
-              />
+              {icon}
             </motion.button>
           </div>
         </Flex>
