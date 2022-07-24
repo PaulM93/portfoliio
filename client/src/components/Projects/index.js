@@ -37,9 +37,10 @@ export default function Index({ projectRef }) {
           </Flex>
           <Flex
             width={"100%"}
+            minHeight={"100vh"}
             display="flex"
             justify={"center"}
-            mb={["150px", "150px", "200px", "200px"]}
+            // mb={["150px", "150px", "200px", "200px"]}
             flexWrap="wrap"
           >
             <LayoutGroup>{cardMarkup}</LayoutGroup>

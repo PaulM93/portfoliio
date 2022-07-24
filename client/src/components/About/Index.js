@@ -14,7 +14,7 @@ export default function Index({ aboutRef }) {
         <Flex
           minWidth={"100%"}
           minHeight={["", "", "", "100vh"]}
-          mb={["150px"]}
+          // mb={["150px"]}
           flexDir="column"
           alignItems="center"
         >

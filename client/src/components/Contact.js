@@ -131,6 +131,7 @@ export default function Contact({ contactRef }) {
           w={["100%", "100%", "100%", "100%"]}
           align="flex-start"
           justify="center"
+          pt={"100px"}
           mb={["150px", "150px", "100px", "100px"]}
         >
           <Flex

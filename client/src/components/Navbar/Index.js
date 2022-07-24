@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Flex, Heading } from "@chakra-ui/react";
 import { FiMoon, FiSun } from "react-icons/fi";
 //Components
@@ -22,6 +22,34 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
+
+  //Navbar animations
+  const [currentPercent, setCurrentPercent] = useState(0);
+  //Scroll y progress = vertical scroll progres between 0 - 1
+  const { scrollYProgress } = useViewportScroll();
+  const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  useEffect(
+    () =>
+      yRange.onChange((v) => {
+        // console.log("Yrange", yRange.current);
+        setCurrentPercent(Math.trunc(yRange.current));
+      }),
+    [yRange]
+  );
+  // const [shouldShowActions, setShouldShowActions] = useState(false);
+  useEffect(() => {
+    function handleScroll() {
+      const yPos = window.scrollY;
+      const isScrollingDown = yPos > 0;
+      setShouldShowActions(isScrollingDown);
+    }
+    window.addEventListener("scroll", handleScroll, false);
+    return () => {
+      window.removeEventListener("scroll", handleScroll, false);
+    };
+  }, []);
+
+  // console.log("Current percentage", currentPercent);
 
   //Add popup that says hello depending on the time of the day
 
@@ -87,6 +115,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             <Flex align="center">
               <Flex align="center" display={["none", "none", "flex", "flex"]}>
                 <NavButtons
+                  currentPercent={currentPercent}
                   shouldShowActions={shouldShowActions}
                   aboutRef={aboutRef}
                   projectRef={projectRef}
