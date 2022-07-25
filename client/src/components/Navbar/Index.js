@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, useToast } from "@chakra-ui/react";
 //Components
 import NavButtons from "./NavButtons";
 import ColorMode from "./ColorMode";
@@ -21,6 +21,31 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
     return () => {
       window.removeEventListener("scroll", handleScroll, false);
     };
+  }, []);
+
+  const toast = useToast();
+  useEffect(() => {
+    const today = new Date();
+    const curHr = today.getHours();
+    let message;
+    if (curHr < 12) {
+      message = "Good morning 🌄";
+    } else if (curHr < 18) {
+      message = "Good afternoon ⛰️";
+    } else {
+      message = "Good evening 🌌";
+    }
+    toast({
+      title: message,
+      containerStyle: {
+        padding: "10px",
+      },
+      variant: "subtle",
+      status: "info",
+      duration: 2000,
+      isClosable: true,
+      position: "bottom-right",
+    });
   }, []);
 
   //Navbar animations
@@ -48,8 +73,6 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
-
-  console.log("Current percentage", currentPercent);
 
   //Add popup that says hello depending on the time of the day
 
