@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import { FormattedMessage } from "react-intl";
 import { motion } from "framer-motion";
 import { Flex, Heading, Link, Box } from "@chakra-ui/react";
 //Components
@@ -26,7 +25,7 @@ export default function Home() {
       >
         <Flex
           w={"100%"}
-          pt={"90px"}
+          // pt={"80px"}
           minH={"90vh"}
           flexDir={"column"}
           justify="center"

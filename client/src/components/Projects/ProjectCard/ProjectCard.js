@@ -31,37 +31,38 @@ export default function ProjectCard({
   const ref = useRef();
   const isVisible = ViisbleHook(ref);
   //Close open project card when we scroll up to prevent the navbuttons getting messed up by increased page
-  const [scrollDir, setScrollDir] = useState("scrolling down");
-  useEffect(() => {
-    const threshold = 0;
-    let lastScrollY = window.pageYOffset;
-    let ticking = false;
-    const updateScrollDir = () => {
-      const scrollY = window.pageYOffset;
-      if (Math.abs(scrollY - lastScrollY) < threshold) {
-        ticking = false;
-        return;
-      }
-      setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-      ticking = false;
-    };
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollDir);
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    console.log(scrollDir);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollDir]);
+  // const [scrollDir, setScrollDir] = useState("scrolling down");
+  // useEffect(() => {
+  //   const threshold = 0;
+  //   let lastScrollY = window.pageYOffset;
+  //   let ticking = false;
+  //   const updateScrollDir = () => {
+  //     const scrollY = window.pageYOffset;
+  //     if (Math.abs(scrollY - lastScrollY) < threshold) {
+  //       ticking = false;
+  //       return;
+  //     }
+  //     setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
+  //     lastScrollY = scrollY > 0 ? scrollY : 0;
+  //     ticking = false;
+  //   };
+  //   const onScroll = () => {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(updateScrollDir);
+  //       ticking = true;
+  //     }
+  //   };
+  //   window.addEventListener("scroll", onScroll);
+  //   console.log(scrollDir);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, [scrollDir]);
 
-  useEffect(() => {
-    if (!isVisible && scrollDir === "scrolling up") {
-      setIsOpen(false);
-    }
-  }, [isVisible, scrollDir]);
+  // useEffect(() => {
+  //   //FInd top position of element --- if scroll is above this we close
+  //   if (!isVisible && scrollDir === "scrolling up") {
+  //     setIsOpen(false);
+  //   }
+  // }, [isVisible, scrollDir]);
 
   return (
     <>

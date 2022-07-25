@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Flex, Heading } from "@chakra-ui/react";
-import { FiMoon, FiSun } from "react-icons/fi";
 //Components
 import NavButtons from "./NavButtons";
+import ColorMode from "./ColorMode";
 import SocialButtons from "../SocialButtons";
 
 export default function NavBar({ aboutRef, contactRef, projectRef }) {
@@ -49,7 +49,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
     };
   }, []);
 
-  // console.log("Current percentage", currentPercent);
+  console.log("Current percentage", currentPercent);
 
   //Add popup that says hello depending on the time of the day
 
@@ -100,6 +100,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
               Paul Marley
             </Heading>
             <SocialButtons shouldShowActions={shouldShowActions} type={"nav"} />
+            <ColorMode />
           </motion.div>
           <motion.div
             style={{ opacity: 0 }}
@@ -122,6 +123,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
                   contactRef={contactRef}
                 />
               </Flex>
+
               {/* Mob Nav  */}
               {/* <IconButton
                 onClick={toggleColorMode}
@@ -129,6 +131,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
                 icon={colorMode === "light" ? <FiSun /> : <FiMoon />}
               /> */}
             </Flex>
+
             {/* <IconButton
               size="sm"
               onClick={toggleColorMode}

@@ -9,12 +9,11 @@ import Chart from "./Chart/Chart";
 export default function Index({ aboutRef }) {
   return (
     <>
-      <div ref={aboutRef} style={{ paddingTop: "100px" }} />
+      <div ref={aboutRef} style={{ paddingTop: "80px" }} />
       <MotionWrapper>
         <Flex
           minWidth={"100%"}
           minHeight={["", "", "", "100vh"]}
-          // mb={["150px"]}
           flexDir="column"
           alignItems="center"
         >
