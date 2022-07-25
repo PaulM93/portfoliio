@@ -78,6 +78,7 @@ export default function NavButtons({
           <Flex align="center" justifyContent={"space-between"}>
             {buttonArr.map((button) => (
               <NavButton
+                key={button}
                 handleSelect={handleSelect}
                 buttonWidth={buttonWidth}
                 text={button}

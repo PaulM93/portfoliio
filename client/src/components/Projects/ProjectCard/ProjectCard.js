@@ -16,7 +16,7 @@ import Tags from "./Tags";
 import ProjectStatus from "./ProjectStatus";
 import ProjectInfo from "../ProjectInfo";
 import Functionality from "../Functionality";
-import ViisbleHook from "./VisibleHook";
+import VisbleHook from "./VisibleHook";
 
 export default function ProjectCard({
   completed,
@@ -29,40 +29,16 @@ export default function ProjectCard({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef();
-  const isVisible = ViisbleHook(ref);
-  //Close open project card when we scroll up to prevent the navbuttons getting messed up by increased page
-  // const [scrollDir, setScrollDir] = useState("scrolling down");
-  // useEffect(() => {
-  //   const threshold = 0;
-  //   let lastScrollY = window.pageYOffset;
-  //   let ticking = false;
-  //   const updateScrollDir = () => {
-  //     const scrollY = window.pageYOffset;
-  //     if (Math.abs(scrollY - lastScrollY) < threshold) {
-  //       ticking = false;
-  //       return;
-  //     }
-  //     setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
-  //     lastScrollY = scrollY > 0 ? scrollY : 0;
-  //     ticking = false;
-  //   };
-  //   const onScroll = () => {
-  //     if (!ticking) {
-  //       window.requestAnimationFrame(updateScrollDir);
-  //       ticking = true;
-  //     }
-  //   };
-  //   window.addEventListener("scroll", onScroll);
-  //   console.log(scrollDir);
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, [scrollDir]);
+  const isVisible = VisbleHook(ref);
 
-  // useEffect(() => {
-  //   //FInd top position of element --- if scroll is above this we close
-  //   if (!isVisible && scrollDir === "scrolling up") {
-  //     setIsOpen(false);
-  //   }
-  // }, [isVisible, scrollDir]);
+  useEffect(() => {
+    if (isOpen) {
+      const { y } = ref.current.getBoundingClientRect();
+      if (!isVisible && y > 0) {
+        setIsOpen(false);
+      }
+    }
+  }, [isOpen, isVisible]);
 
   return (
     <>
