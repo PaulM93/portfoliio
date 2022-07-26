@@ -6,7 +6,12 @@ export const myNewTheme = extendTheme({
   // initialColorMode: "light",
   useSystemColorMode: false,
   colors: {
-    background: "#16181D",
+    dark: {
+      background: "#16181D",
+    },
+    light: {
+      background: "#F7FAFC",
+    },
     primary: "#5686F5",
     secondary: "#EDE8FD",
     primaryMute: "#98a0b3",

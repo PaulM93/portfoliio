@@ -6,14 +6,11 @@ import { Flex, Heading, Link, Box } from "@chakra-ui/react";
 import SocialButtons from "../SocialButtons";
 import Subtitle from "../util/Subtitle";
 import WavingHand from "../util/WavingHand";
-import { useColorMode } from "@chakra-ui/react";
+import Tag from "./Tag";
 //Scroll down and social icons appear at top
 //Make hand wave
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  console.log("colormode", colorMode);
-
   return (
     <>
       <motion.div
@@ -25,7 +22,7 @@ export default function Home() {
       >
         <Flex
           w={"100%"}
-          // pt={"80px"}
+          pt={"80px"}
           minH={"90vh"}
           flexDir={"column"}
           justify="center"
@@ -42,7 +39,12 @@ export default function Home() {
               </Box>
             </Flex>
           </Heading>
-          <Heading size={"lg"} style={{ color: "#98a0b3" }} mb={5}>
+          <Heading
+            lineHeight={1.5}
+            size={"lg"}
+            style={{ color: "#98a0b3" }}
+            mb={5}
+          >
             I am a self-taught full-stack junior developer based in Medellin,
             Colombia. I am the founder and lead developer/designer of{" "}
             <Link href={"https://www.olatoo.com/"} isExternal>
@@ -51,7 +53,8 @@ export default function Home() {
             a web app aimed at helping folks level up their Spanish.
           </Heading>
           <Flex>
-            <SocialButtons />
+            <Tag />
+            {/* <SocialButtons /> */}
           </Flex>
         </Flex>
       </motion.div>

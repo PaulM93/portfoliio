@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-// import { useTheme } from "../ThemeContext";
+import { useTheme } from "../ThemeContext";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 export default function ColorMode() {
-  //   const { setTheme, themes } = useTheme();
+  const { setTheme, themes } = useTheme();
   const [whileHover, setWhileHover] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
   const color = useColorModeValue("white", "gray.800");
@@ -14,9 +14,11 @@ export default function ColorMode() {
     toggleColorMode();
   };
 
-  //   useEffect(() => {
-  //     setTheme(themes[colorMode === "dark" ? "dark" : "light"]);
-  //   }, [colorMode]);
+  useEffect(() => {
+    if (themes) {
+      setTheme(themes[colorMode === "dark" ? "dark" : "light"]);
+    }
+  }, [colorMode, setTheme, themes]);
 
   return (
     <motion.div
@@ -38,6 +40,7 @@ export default function ColorMode() {
           transition: { duration: 1 },
         }}
         style={{
+          zIndex: 400,
           position: "absolute",
           color: color,
         }}
@@ -47,13 +50,13 @@ export default function ColorMode() {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{
-          opacity: whileHover ? 1 : colorMode === "light" ? 1 : 0,
+          opacity: whileHover ? 1 : colorMode === "dark" ? 1 : 0,
           rotate: whileHover ? 360 : 0,
           transition: { duration: 1 },
         }}
         style={{
-          zIndex: 10,
-          color: colorMode === "light" ? "#805AD5" : "white",
+          zIndex: 500,
+          color: colorMode === "dark" ? "#805AD5" : "white",
         }}
       >
         <FiMoon />

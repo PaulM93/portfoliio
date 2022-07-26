@@ -83,6 +83,51 @@
     "github": "https://github.com/PaulM93/Olatoo"
 },
 {
+  "title": "Spaced",
+  "completed": true,
+  "hashtags": [
+      "React",
+      "Create React App",
+      "AdobeXD",
+      "Framer-motion",
+      "ChakraUI",
+      "MySQL",
+      "JWT",
+      "Supermemo",
+      "Redux", 
+      "Redux Toolkit",
+      "Typescript",
+      "Day.js",
+      "NodeJS",   
+      "Express",
+      "bcrypt",
+      "Axios"
+  ],
+  "projectInfo": {
+          "functionality": [],
+          "info": [
+              {
+                  "title": "Description",
+                  "description":
+                    "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
+              },
+              {
+                  "title": "Technology",
+                  "description":
+                    "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
+                },
+                {
+                  "title": "Design Process",
+                  "description":
+                    "The app is being designed with AdobeXD with the design framework ChakraUI."
+                }
+          ]
+      
+  },
+  "link": "",
+  "github": "https://github.com/PaulM93/portfoliio"
+},
+{
     "title": "MVPT",
     "completed": false,
     "hashtags": [
@@ -179,51 +224,6 @@
         "Heroku",
         "NodeJS",
         "Express",
-        "Axios"
-    ],
-    "projectInfo": {
-            "functionality": [],
-            "info": [
-                {
-                    "title": "Description",
-                    "description":
-                      "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
-                },
-                {
-                    "title": "Technology",
-                    "description":
-                      "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
-                  },
-                  {
-                    "title": "Design Process",
-                    "description":
-                      "The app is being designed with AdobeXD with the design framework ChakraUI."
-                  }
-            ]
-        
-    },
-    "link": "",
-    "github": "https://github.com/PaulM93/portfoliio"
-},
-{
-    "title": "Spaced",
-    "completed": true,
-    "hashtags": [
-        "React",
-        "Create React App",
-        "AdobeXD",
-        "Framer-motion",
-        "ChakraUI",
-        "MySQL",
-        "JWT",
-        "Supermemo",
-        "Redux", 
-        "Redux Toolkit",
-        "Typescript",
-        "Day.js",
-        "NodeJS",   
-        "Express",
-        "bcrypt",
         "Axios"
     ],
     "projectInfo": {

@@ -11,10 +11,10 @@ export default function About({ duration }) {
         transition={{ duration: duration }}
       >
         <Text
-          // fontSize="md"
           color="secondary"
           fontWeight={"700"}
           mb={5}
+          lineHeight={1.6}
           w={["100%", "100%", "80%", "80%"]}
           letterSpacing={"1px"}
         >
@@ -24,11 +24,22 @@ export default function About({ duration }) {
           interest in how animation can be used to provide a greater UI
           experience.
         </Text>
-        <Text mb={4} fontSize="md" color="primaryMute" fontWeight={"500"}>
+        <Text
+          lineHeight={1.6}
+          mb={4}
+          fontSize="md"
+          color="primaryMute"
+          fontWeight={"500"}
+        >
           I am particularly interested in app UI design and strive to create the
           most aesthetically pleasing apps as possible.
         </Text>
-        <Text fontSize="md" color="primaryMute" fontWeight={"500"}>
+        <Text
+          lineHeight={1.6}
+          fontSize="md"
+          color="primaryMute"
+          fontWeight={"500"}
+        >
           My goal is to continuously grow as a developer while staying current
           with the latest trends and technologies. I would love to work for a
           team that is truly passionate about what they create and that is

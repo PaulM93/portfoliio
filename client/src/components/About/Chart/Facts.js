@@ -11,7 +11,11 @@ export default function Facts({ duration }) {
     "I have no relation to Bob Marley 😑",
   ];
 
-  let markup = facts.map((i) => <ListItem fontSize={"md"}>{i}</ListItem>);
+  let markup = facts.map((i) => (
+    <ListItem color={"#98a0b3"} fontSize={"md"}>
+      {i}
+    </ListItem>
+  ));
 
   return (
     <>
@@ -23,6 +27,7 @@ export default function Facts({ duration }) {
         <Box minWidth="100%">
           <Text
             fontSize="md"
+            lineHeight={1.6}
             color="secondary"
             fontWeight={"700"}
             mb={5}

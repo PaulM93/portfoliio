@@ -88,6 +88,7 @@ export default function Skills({ duration }) {
             color="secondary"
             fontWeight={"700"}
             mb={10}
+            lineHeight={1.6}
             w={["100%", "100%", "80%", "80%"]}
           >
             <span style={{ fontWeight: 700, marginRight: "5px" }}>

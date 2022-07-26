@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
-import { motion, LayoutGroup } from "framer-motion";
+import { LayoutGroup } from "framer-motion";
 import { Flex } from "@chakra-ui/react";
-import { FiGrid, FiUser, FiFolder, FiCoffee } from "react-icons/fi";
+import { FiHome, FiUser, FiFolder, FiCoffee } from "react-icons/fi";
 import NavButton from "./NavButton";
 import MotionIcon from "./MotionIcon";
 
@@ -23,16 +23,16 @@ export default function NavButtons({
   };
 
   const [icon, setIcon] = useState(
-    <FiGrid style={{ color: "white", height: "12px" }} />
+    <FiHome style={{ color: "white", height: "15px" }} />
   );
   useEffect(() => {
     const iconStyle = {
       color: "white",
-      height: "12px",
+      height: "15px",
     };
     const pos = currentPercent * 4;
     if (pos === 0 || pos < 95) {
-      setIcon(<FiGrid style={iconStyle} />);
+      setIcon(<FiHome style={iconStyle} />);
     }
     if (pos > 95 && pos < 190) {
       setIcon(<FiUser style={iconStyle} />);

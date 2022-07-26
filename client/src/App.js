@@ -21,7 +21,6 @@ function App() {
 
   return (
     <ChakraProvider theme={myNewTheme}>
-      {/* <ColorModeScript /> */}
       <ColorModeScript initialColorMode={"dark"} />
       <Layout>
         <NavBar

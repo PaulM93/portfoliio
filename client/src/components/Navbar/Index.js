@@ -80,10 +80,10 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
     <>
       <motion.div
         className={styles.container}
-        initial={{ borderBottom: "none", height: "60px" }}
+        initial={{ borderBottom: "none", height: "70px" }}
         animate={{
           borderTop: shouldShowActions ? "none" : "10px solid #5686F5",
-          height: shouldShowActions ? "65px" : "90px",
+          height: shouldShowActions ? "80px" : "100px",
           borderBottom: shouldShowActions ? "2px solid #23272F" : "none",
         }}
         transition={{ duration: 0.2 }}
@@ -114,7 +114,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             <Heading
               zIndex={900}
               mr={5}
-              size="xs"
+              size="sm"
               color="secondary"
               fontWeight={"700"}
               fontFamily={"heading"}
@@ -123,7 +123,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
               Paul Marley
             </Heading>
             <SocialButtons shouldShowActions={shouldShowActions} type={"nav"} />
-            <ColorMode />
+            {/* <ColorMode /> */}
           </motion.div>
           <motion.div
             style={{ opacity: 0 }}

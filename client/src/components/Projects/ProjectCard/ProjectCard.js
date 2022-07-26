@@ -17,6 +17,7 @@ import ProjectStatus from "./ProjectStatus";
 import ProjectInfo from "../ProjectInfo";
 import Functionality from "../Functionality";
 import VisbleHook from "./VisibleHook";
+import OpenButton from "./OpenButton";
 
 export default function ProjectCard({
   completed,
@@ -72,7 +73,8 @@ export default function ProjectCard({
                       {title}
                     </Heading>
                   </motion.div>
-                  <motion.div
+                  <OpenButton setIsOpen={setIsOpen} isOpen={isOpen} />
+                  {/* <motion.div
                     whileHover={{
                       scale: 1.2,
                       rotate: 90,
@@ -89,7 +91,7 @@ export default function ProjectCard({
                       aria-label="open"
                       icon={!isOpen ? <AddIcon /> : <CloseIcon />}
                     />
-                  </motion.div>
+                  </motion.div> */}
                 </div>
                 <Box minHeight={!isOpen ? ["", "", "180px", "180px"] : ""}>
                   <Tags hashtags={hashtags} isOpen={isOpen} />

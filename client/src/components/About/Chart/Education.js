@@ -54,6 +54,7 @@ export default function Education({ duration }) {
         <Text
           w={["100%", "100%", "80%", "80%"]}
           fontSize="md"
+          lineHeight={1.6}
           color="secondary"
           fontWeight={"700"}
           mb={10}

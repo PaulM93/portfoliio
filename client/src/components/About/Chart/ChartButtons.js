@@ -12,10 +12,10 @@ export default function ChartButtons({ selected, setSelected }) {
   ];
 
   const chartButtonMarkup = chartButtonArr.map((i) => (
-    <GridItem w="100%" h="60px">
+    <GridItem w="100%" h="60px" position={"relative"}>
       <motion.button
         whileHover={{
-          scale: 1.05,
+          // scale: 1.05,
           transition: { duration: 0.4, type: "spring" },
         }}
         initial={{
@@ -34,10 +34,13 @@ export default function ChartButtons({ selected, setSelected }) {
           alignItems: "center",
           justifyContent: "center",
           color: i.name !== selected ? "#98a0b3" : "#5686F5",
-          border: "1px solid #23272F",
+          border:
+            i.name === selected ? "2px solid #5686F5" : "1px solid #23272F",
           background: i.name === selected ? "#1A1D23" : "",
           boxShadow:
-            "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px",
+            selected === i.name
+              ? "0px 0px 25px -10px rgba(86,134,245,0.8)"
+              : "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px",
         }}
       >
         <Box>{i.icon}</Box>

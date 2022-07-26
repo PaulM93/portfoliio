@@ -21,16 +21,15 @@ export default function NavButton({ buttonWidth, handleSelect, text }) {
     >
       <motion.button
         initial={{ opacity: 1 }}
-        animate={{ opacity: whileHover ? 0 : 1, transition: { duration: 0.4 } }}
+        animate={{ opacity: whileHover ? 0 : 1, transition: { duration: 0.2 } }}
         whileHover={{
-          scale: 1.05,
-          transition: { duration: 0.4, type: "spring" },
+          transition: { duration: 0.2, type: "spring" },
         }}
       >
         <Heading
           color="secondary"
           textAlign={"center"}
-          fontSize="xs"
+          fontSize="sm"
           mb={2}
           textTransform="uppercase"
         >
@@ -39,17 +38,16 @@ export default function NavButton({ buttonWidth, handleSelect, text }) {
       </motion.button>
       <motion.button
         initial={{ opacity: 0 }}
-        animate={{ opacity: whileHover ? 1 : 0, transition: { duration: 0.4 } }}
+        animate={{ opacity: whileHover ? 1 : 0, transition: { duration: 0.2 } }}
         style={{ position: "absolute" }}
         whileHover={{
-          scale: 1.05,
-          transition: { duration: 0.4, type: "spring" },
+          transition: { duration: 0.2 },
         }}
       >
         <Heading
           color="primary"
           textAlign={"center"}
-          fontSize="xs"
+          fontSize="sm"
           mb={2}
           textTransform="uppercase"
         >

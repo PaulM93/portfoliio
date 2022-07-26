@@ -1,13 +1,14 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, useColorModeValue } from "@chakra-ui/react";
 
 export default function Layout({ children }) {
+  const background = useColorModeValue("dark.background", "light.background");
   return (
     <>
       <Flex
         minH={"100vh"}
         borderBottom="10px solid #5686F5"
-        bg={"background"}
+        bg={background}
         alignItems="center"
         flexDirection={"column"}
       >
