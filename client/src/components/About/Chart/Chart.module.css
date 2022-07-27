@@ -1,0 +1,30 @@
+.containerVisible {
+    z-index: 0;
+    box-shadow: 
+      rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 10px;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    border: 2px solid #23272F;
+    background: #1A1D23;
+  }
+
+.containerHidden {
+    z-index: -10;
+    position: absolute;
+    box-shadow: 0px 16px 40px -10px rgba(86,134,245,0.8);
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 10px;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    border: 2px solid #23272F;
+    background: #1A1D23
+}
+  

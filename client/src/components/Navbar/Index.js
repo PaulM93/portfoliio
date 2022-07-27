@@ -4,12 +4,9 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Flex, Heading, useToast } from "@chakra-ui/react";
 //Components
 import NavButtons from "./NavButtons";
-import ColorMode from "./ColorMode";
-import SocialButtons from "../SocialButtons";
+// import SocialButtons from "../SocialButtons";
 
 export default function NavBar({ aboutRef, contactRef, projectRef }) {
-  // const { colorMode, toggleColorMode } = useColorMode();
-
   const [shouldShowActions, setShouldShowActions] = useState(false);
   useEffect(() => {
     function handleScroll() {
@@ -23,31 +20,6 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
     };
   }, []);
 
-  const toast = useToast();
-  useEffect(() => {
-    const today = new Date();
-    const curHr = today.getHours();
-    let message;
-    if (curHr < 12) {
-      message = "Good morning 🌄";
-    } else if (curHr < 18) {
-      message = "Good afternoon ⛰️";
-    } else {
-      message = "Good evening 🌌";
-    }
-    toast({
-      title: message,
-      containerStyle: {
-        padding: "10px",
-      },
-      variant: "subtle",
-      status: "info",
-      duration: 2000,
-      isClosable: true,
-      position: "bottom-right",
-    });
-  }, []);
-
   //Navbar animations
   const [currentPercent, setCurrentPercent] = useState(0);
   //Scroll y progress = vertical scroll progres between 0 - 1
@@ -56,7 +28,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
   useEffect(
     () =>
       yRange.onChange((v) => {
-        // console.log("Yrange", yRange.current);
+        // const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
         setCurrentPercent(Math.trunc(yRange.current));
       }),
     [yRange]
@@ -73,6 +45,35 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
+
+  const toast = useToast();
+  const id = "Welcome toast";
+  useEffect(() => {
+    const today = new Date();
+    const curHr = today.getHours();
+    let message;
+    if (curHr < 12) {
+      message = "Good morning 🌄";
+    } else if (curHr < 18) {
+      message = "Good afternoon ⛰️";
+    } else {
+      message = "Good evening 🌌";
+    }
+    // alert("here");
+    if (!toast.isActive(id)) {
+      toast({
+        title: message,
+        containerStyle: {
+          padding: "10px",
+        },
+        variant: "subtle",
+        status: "info",
+        duration: 2000,
+        isClosable: true,
+        position: "bottom-right",
+      });
+    }
+  }, [toast, id]);
 
   //Add popup that says hello depending on the time of the day
 
@@ -122,7 +123,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             >
               Paul Marley
             </Heading>
-            <SocialButtons shouldShowActions={shouldShowActions} type={"nav"} />
+            {/* <SocialButtons shouldShowActions={shouldShowActions} type={"nav"} /> */}
             {/* <ColorMode /> */}
           </motion.div>
           <motion.div
