@@ -5,6 +5,7 @@ interface MotionIconProps {
   buttonWidth: number;
   position: number;
   icon: JSX.Element;
+  whileHover: string;
 }
 
 export default function MotionIcon({

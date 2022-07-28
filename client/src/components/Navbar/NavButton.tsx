@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Heading } from "@chakra-ui/react";
 
@@ -6,19 +6,21 @@ interface NavButtonProps {
   buttonWidth: number;
   handleSelect: (val: string) => void;
   text: string;
+  whileHover: string;
+  setWhileHover: (val: string) => void;
 }
 
 export default function NavButton({
   buttonWidth,
   handleSelect,
+  whileHover,
+  setWhileHover,
   text,
 }: NavButtonProps) {
-  const [whileHover, setWhileHover] = useState(false);
-
   return (
     <motion.div
-      onHoverStart={() => setWhileHover(true)}
-      onHoverEnd={() => setWhileHover(false)}
+      onHoverStart={() => setWhileHover(text)}
+      onHoverEnd={() => setWhileHover("")}
       style={{
         display: "flex",
         justifyContent: "center",
@@ -30,7 +32,10 @@ export default function NavButton({
     >
       <motion.button
         initial={{ opacity: 1 }}
-        animate={{ opacity: whileHover ? 0 : 1, transition: { duration: 0.2 } }}
+        animate={{
+          opacity: whileHover === text ? 0 : 1,
+          transition: { duration: 0.2 },
+        }}
         whileHover={{
           transition: { duration: 0.2, type: "spring" },
         }}
@@ -47,7 +52,10 @@ export default function NavButton({
       </motion.button>
       <motion.button
         initial={{ opacity: 0 }}
-        animate={{ opacity: whileHover ? 1 : 0, transition: { duration: 0.2 } }}
+        animate={{
+          opacity: whileHover === text ? 1 : 0,
+          transition: { duration: 0.2 },
+        }}
         style={{ position: "absolute" }}
         whileHover={{
           transition: { duration: 0.2 },

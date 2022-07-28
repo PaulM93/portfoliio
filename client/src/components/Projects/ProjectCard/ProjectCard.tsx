@@ -15,7 +15,7 @@ import Tags from "./Tags";
 import ProjectStatus from "./ProjectStatus";
 import ProjectInfo from "../ProjectInfo";
 import Functionality from "../Functionality";
-import VisbleHook from "./VisibleHook";
+import VisbleHook from "../../util/VisibleHook";
 import OpenButton from "./OpenButton";
 
 export default function ProjectCard({
@@ -30,8 +30,6 @@ export default function ProjectCard({
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
   const isVisible = VisbleHook(ref);
-
-  console.log("hash", hashtags);
 
   useEffect(() => {
     if (isOpen) {
@@ -52,19 +50,31 @@ export default function ProjectCard({
         >
           <motion.div
             transition={{ layout: { duration: 0.5 } }}
-            // exit={{ duration: !isVisible ? 0 : 1 }}
+            exit={{ transition: { duration: !isVisible ? 0 : 1 } }}
             layout
           >
             <Box
               minHeight={["200px", "200px", "250px", "320px"]}
               bg="#1A1D23"
-              border="2px solid #23272F"
-              boxShadow="rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px"
+              border={
+                isOpen
+                  ? completed
+                    ? "2px solid #5686F5"
+                    : "2px solid #23272F"
+                  : "2px solid #23272F"
+              }
+              boxShadow={
+                isOpen
+                  ? completed
+                    ? "0px 0px 25px -10px rgba(86,134,245,0.8)"
+                    : "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px"
+                  : "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px"
+              }
               borderRadius="10px"
               display="flex"
               flexDir="column"
               justifyContent="space-between"
-              padding="25px"
+              padding={!isOpen ? "25px" : "40px"}
             >
               <div className={styles.topDiv}>
                 <div className={styles.topDivControls}>
@@ -74,25 +84,11 @@ export default function ProjectCard({
                       {title}
                     </Heading>
                   </motion.div>
-                  <OpenButton setIsOpen={setIsOpen} isOpen={isOpen} />
-                  {/* <motion.div
-                    whileHover={{
-                      scale: 1.2,
-                      rotate: 90,
-                      transition: { duration: 1, type: "spring" },
-                    }}
-                    layout
-                    transition={{ layout: { duration: 0.5 } }}
-                  >
-                    <IconButton
-                      colorScheme={"whiteAlpha"}
-                      size="xs"
-                      variant="outline"
-                      onClick={() => setIsOpen(!isOpen)}
-                      aria-label="open"
-                      icon={!isOpen ? <AddIcon /> : <CloseIcon />}
-                    />
-                  </motion.div> */}
+                  <OpenButton
+                    completed={completed}
+                    setIsOpen={setIsOpen}
+                    isOpen={isOpen}
+                  />
                 </div>
                 <Box minHeight={!isOpen ? ["", "", "180px", "180px"] : ""}>
                   <Tags hashtags={hashtags} isOpen={isOpen} />
@@ -134,7 +130,7 @@ export default function ProjectCard({
               )}
 
               {/* Bottom Section */}
-              <Divider mb={5} />
+              <Divider color={"primary"} mb={5} />
               <div className={styles.buttonDiv}>
                 <motion.div layout transition={{ layout: { duration: 0.5 } }}>
                   <ProjectStatus isOpen={isOpen} completed={completed} />

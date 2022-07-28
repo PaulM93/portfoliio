@@ -1,8 +1,14 @@
 import React, { useState, useContext, createContext } from "react";
 
-const ThemeContext = createContext({});
+const AppContext = createContext<{
+  tagDisplay: boolean;
+  setTagDisplay: (val: boolean) => void;
+}>({
+  tagDisplay: true,
+  setTagDisplay: null,
+});
 
-export const ThemeProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
   const primary = "#5686F5";
   const themes = {
     //Dark
@@ -20,21 +26,21 @@ export const ThemeProvider = ({ children }) => {
       },
     },
   };
-  const [theme, setTheme] = useState(themes.dark);
+
+  const [tagDisplay, setTagDisplay] = useState(false);
 
   return (
     <>
-      <ThemeContext.Provider
+      <AppContext.Provider
         value={{
-          theme,
-          themes,
-          setTheme,
+          tagDisplay,
+          setTagDisplay,
         }}
       >
         {children}
-      </ThemeContext.Provider>
+      </AppContext.Provider>
     </>
   );
 };
 
-export const useTheme = () => useContext(ThemeContext);
+export const useAppContext = () => useContext(AppContext);

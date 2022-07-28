@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useTheme } from "../ThemeContext";
+import { useTheme } from "../AppContext";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";

@@ -5,7 +5,7 @@ import { Flex, Heading, Link, Box } from "@chakra-ui/react";
 //Components
 import Subtitle from "../util/Subtitle";
 import WavingHand from "../util/WavingHand";
-import Tag from "./Tag";
+import Tag from "../Tag/Tag";
 //Scroll down and social icons appear at top
 //Make hand wave
 
@@ -54,6 +54,7 @@ export default function Hero() {
           </Heading>
           <Flex>
             <Tag
+              nav={false}
               type={"github"}
               link={"https://github.com/PaulM93"}
               text={"Paulm93"}

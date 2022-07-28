@@ -28,29 +28,31 @@ export default function NavButtons({
     });
   };
 
-  const [icon, setIcon] = useState(
-    <FiHome style={{ color: "white", height: "15px" }} />
-  );
+  const [icon, setIcon] = useState({
+    type: "",
+    icon: <FiHome style={{ color: "white", height: "15px" }} />,
+  });
+  const [iconStyle, setIconStyle] = useState({
+    color: "white",
+    height: "15px",
+  });
+  const [whileHover, setWhileHover] = useState("");
   useEffect(() => {
-    const iconStyle = {
-      color: "white",
-      height: "15px",
-    };
     const pos = currentPercent * 4;
-    if (pos === 0 || pos < 95) {
-      setIcon(<FiHome style={iconStyle} />);
+    if (pos === 0 || pos < 90) {
+      setIcon({ type: "home", icon: <FiHome style={iconStyle} /> });
     }
-    if (pos > 95 && pos < 190) {
-      setIcon(<FiUser style={iconStyle} />);
+    if (pos > 95 && pos < 185) {
+      setIcon({ type: "about", icon: <FiUser style={iconStyle} /> });
     }
-    if (pos > 190 && pos < 285) {
-      setIcon(<FiFolder style={iconStyle} />);
+    if (pos > 190 && pos < 280) {
+      setIcon({ type: "projects", icon: <FiFolder style={iconStyle} /> });
     }
     if (pos > 285) {
-      setIcon(<FiCoffee style={iconStyle} />);
+      setIcon({ type: "contact", icon: <FiCoffee style={iconStyle} /> });
     }
-    setPosition(pos < 300 ? pos : 300);
-  }, [currentPercent]);
+    setPosition(pos < 295 ? pos : 300);
+  }, [currentPercent, iconStyle, whileHover]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -77,6 +79,20 @@ export default function NavButtons({
     }
   };
 
+  useEffect(() => {
+    if (whileHover === icon.type) {
+      setIconStyle({
+        color: "#5686F5",
+        height: "15px",
+      });
+    } else {
+      setIconStyle({
+        color: "white",
+        height: "15px",
+      });
+    }
+  }, [whileHover, icon.type]);
+
   return (
     <>
       <LayoutGroup>
@@ -84,6 +100,8 @@ export default function NavButtons({
           <Flex align="center" justifyContent={"space-between"}>
             {buttonArr.map((button) => (
               <NavButton
+                setWhileHover={setWhileHover}
+                whileHover={whileHover}
                 key={button}
                 handleSelect={handleSelect}
                 buttonWidth={buttonWidth}
@@ -93,7 +111,8 @@ export default function NavButtons({
           </Flex>
           {/* motionstuff */}
           <MotionIcon
-            icon={icon}
+            whileHover={whileHover}
+            icon={icon.icon}
             buttonWidth={buttonWidth}
             position={position}
           />

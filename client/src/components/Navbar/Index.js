@@ -4,7 +4,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Flex, Heading, useToast } from "@chakra-ui/react";
 //Components
 import NavButtons from "./NavButtons";
-// import SocialButtons from "../SocialButtons";
+import NavTag from "../Tag/NavTag";
 
 export default function NavBar({ aboutRef, contactRef, projectRef }) {
   const [shouldShowActions, setShouldShowActions] = useState(false);
@@ -123,8 +123,11 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             >
               Paul Marley
             </Heading>
-            {/* <SocialButtons shouldShowActions={shouldShowActions} type={"nav"} /> */}
-            {/* <ColorMode /> */}
+            <NavTag
+              type={"github"}
+              link={"https://github.com/PaulM93"}
+              text={"Paulm93"}
+            />
           </motion.div>
           <motion.div
             style={{ opacity: 0 }}
