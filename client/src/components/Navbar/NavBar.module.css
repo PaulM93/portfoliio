@@ -5,6 +5,7 @@
   left: 0;
   top: 0;
   z-index: 9994;
+  /* background: rgba(22, 24, 29, 0.3); */
   transform: translateZ(0);
   justify-content: center;
   align-items: center;
@@ -15,8 +16,9 @@
   display: flex;
   justify-content: center;
   background: rgba(22, 24, 29, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(60%) brightness(130%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   height: 100%;
   position: absolute;
 }

@@ -1,25 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
-import {
-  Flex,
-  IconButton,
-  Heading,
-  useToast,
-  VStack,
-  Button,
-} from "@chakra-ui/react";
-import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { Flex, IconButton, Heading, useToast } from "@chakra-ui/react";
+import { FiChevronRight } from "react-icons/fi";
 //Components
 import NavButtons from "./NavButtons";
 import MobNav from "./MobNav/MobNav";
 import NavTag from "../Tag/NavTag";
-import { FiHome, FiUser, FiFolder, FiCoffee } from "react-icons/fi";
 
 export default function NavBar({ aboutRef, contactRef, projectRef }) {
   const [shouldShowActions, setShouldShowActions] = useState(false);
