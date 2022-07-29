@@ -26,7 +26,6 @@ export default function MobNav({
         <motion.div
           initial={{
             opacity: 0,
-            borderRadius: "0px 0px 0px 150px",
             width: "100px",
             height: "0px",
           }}
@@ -40,7 +39,6 @@ export default function MobNav({
             },
           }}
           exit={{
-            borderRadius: "0px 0px 0px 150px",
             width: 0,
             padding: "0px",
             height: 0,
@@ -61,9 +59,9 @@ export default function MobNav({
             flexDirection: "column",
             alignItems: "center",
             boxShadow: "0px 6px 10px 3px rgba(0,0,0,0.1)",
-            background: "rgba(22, 24, 29, 0.3)",
-            backdropFilter: "blur(7px)",
-            WebkitBackdropFilter: "blur(7px)",
+            background: "#5686F5",
+            // backdropFilter: "blur(7px)",
+            // WebkitBackdropFilter: "blur(7px)",
             borderBottom: "2px solid #23272F",
             borderTop: !shouldShowActions ? "2px solid #23272F" : "none",
           }}
