@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { Flex, Heading, useToast } from "@chakra-ui/react";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
+import {
+  Flex,
+  IconButton,
+  Heading,
+  useToast,
+  VStack,
+  Button,
+} from "@chakra-ui/react";
+import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 //Components
 import NavButtons from "./NavButtons";
+import MobNav from "./MobNav";
 import NavTag from "../Tag/NavTag";
+import { FiHome, FiUser, FiFolder, FiCoffee } from "react-icons/fi";
 
 export default function NavBar({ aboutRef, contactRef, projectRef }) {
   const [shouldShowActions, setShouldShowActions] = useState(false);
@@ -75,7 +90,19 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
     }
   }, [toast, id]);
 
-  //Add popup that says hello depending on the time of the day
+  //Mob Props
+  const [open, setOpen] = useState(true);
+
+  // FiHome, FiUser, FiFolder, FiCoffee
+  const buttons = [
+    { name: "About", icon: <FiUser /> },
+    { name: "Projects", icon: <FiFolder /> },
+    { name: "Contact", icon: <FiCoffee /> },
+  ];
+
+  const handleNavClick = (val) => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -91,7 +118,16 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
       >
         {/* HiddenContainer - animates opacity on scroll */}
         <motion.div
-          className={styles.hiddenContainer}
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            background: "rgba(22, 24, 29, 0.3)",
+            boxShadow: !open ? "0 4px 30px rgba(0, 0, 0, 0.1)" : "none",
+            backdropFilter: "blur(7px)",
+            height: "100%",
+            position: "absolute",
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: shouldShowActions ? 1 : 0 }}
         />
@@ -129,6 +165,31 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
               text={"Paulm93"}
             />
           </motion.div>
+          <motion.button
+            onClick={() => setOpen(!open)}
+            style={{
+              position: "absolute",
+              right: 20,
+              // top: 20,
+              zIndex: 100000,
+            }}
+            animate={{
+              rotate: open ? 180 : 0,
+              transition: { duration: 0.2 },
+            }}
+          >
+            <IconButton
+              isRound={true}
+              colorScheme="white"
+              // mt={shouldShowActions ? 0 : 1}
+              size="sm"
+              color="#23272F"
+              borderColor="#23272F"
+              border="1px"
+              icon={<FiChevronRight style={{ color: "white" }} />}
+              aria-label="open menu"
+            />
+          </motion.button>
           <motion.div
             style={{ opacity: 0 }}
             initial={{ opacity: 0 }}
@@ -152,20 +213,103 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
               </Flex>
 
               {/* Mob Nav  */}
-              {/* <IconButton
-                onClick={toggleColorMode}
-                display={["flex", "flex", "none", "none"]}
-                icon={colorMode === "light" ? <FiSun /> : <FiMoon />}
-              /> */}
-            </Flex>
 
-            {/* <IconButton
-              size="sm"
-              onClick={toggleColorMode}
-              // display={["flex", "flex", "none", "none"]}
-              icon={colorMode === "light" ? <FiSun /> : <FiMoon />}
-            /> */}
+              {/* <MobNav setOpen={setOpen} open={open} /> */}
+            </Flex>
           </motion.div>
+
+          {/* Mob  */}
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  borderRadius: "0px 0px 0px 150px",
+                  width: "100px",
+                  height: "0px",
+                }}
+                animate={{
+                  opacity: open ? 1 : 0,
+                  // padding: "40px",
+                  borderRadius: open && "0px",
+                  width: open ? "100%" : "0px",
+                  height: open ? "180px" : "0px",
+                  transition: {
+                    duration: 0.2,
+                  },
+                }}
+                exit={{
+                  borderRadius: "0px 0px 0px 150px",
+                  width: 0,
+                  padding: "0px",
+                  height: 0,
+                  transition: {
+                    duration: 0.2,
+                    delay: 0.3,
+                  },
+                }}
+                style={{
+                  position: "absolute",
+                  zIndex: 10000,
+                  top: "80px",
+                  right: 0,
+                  width: "100%",
+                  padding: "40px",
+                  minHeight: "180px",
+
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  boxShadow: "0px 6px 10px 3px rgba(0,0,0,0.1)",
+                  // background: "grey",
+                  background: "rgba(22, 24, 29, 0.3)",
+                  backdropFilter: "blur(7px)",
+                  borderBottom: "2px solid #23272F",
+                  borderTop: !shouldShowActions ? "2px solid #23272F" : "none",
+                }}
+              >
+                {buttons.map((button, i) => (
+                  <motion.div
+                    onClick={() => handleNavClick(button.text)}
+                    style={{ display: "flex", marginBottom: "15px" }}
+                    initial={{ opacity: 0, translateY: 20 }}
+                    animate={{
+                      opacity: 1,
+                      translateY: 0,
+                      transition: {
+                        duration: 0.1,
+                        delay: i * 0.1,
+                      },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: {
+                        duration: 0.1,
+                        delay: i * 0.1,
+                      },
+                      // translateY: 20,
+                      // transition: { duration: 0.1 },
+                    }}
+                  >
+                    <motion.button
+                      whileTap={{ scale: 1.2, color: "#5686F5" }}
+                      style={{
+                        color: "white",
+                        fontSize: "16px",
+                        display: "flex",
+                        alignItems: "center",
+                        textAlign: "center",
+                      }}
+                    >
+                      <span style={{ marginRight: "10px" }}>{button.icon}</span>
+
+                      {button.name}
+                    </motion.button>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Flex>
       </motion.div>
     </>

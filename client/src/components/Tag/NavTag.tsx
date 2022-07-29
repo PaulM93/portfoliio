@@ -28,7 +28,12 @@ export default function NavTag({ link, text }) {
         >
           <Link href={link} isExternal>
             <Flex align="center">
-              <Text fontSize={"sm"} mr={3} fontWeight={700}>
+              <Text
+                display={["none", "none", "flex", "flex"]}
+                fontSize={"sm"}
+                mr={3}
+                fontWeight={700}
+              >
                 {text}
               </Text>
               <Icon fontSize={"sm"} as={FaGithub} />
