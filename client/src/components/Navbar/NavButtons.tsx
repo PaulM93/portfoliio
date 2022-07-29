@@ -10,6 +10,7 @@ interface NavButtonsProps {
   projectRef: { current: HTMLDivElement };
   contactRef: { current: HTMLDivElement };
   currentPercent: number;
+  handleSelect: (val: string) => void;
 }
 
 export default function NavButtons({
@@ -17,16 +18,9 @@ export default function NavButtons({
   projectRef,
   contactRef,
   currentPercent,
+  handleSelect,
 }: NavButtonsProps) {
   const [position, setPosition] = useState(0);
-
-  const scrollEffect = (targetRef: { current: HTMLDivElement }) => {
-    console.log("Targe ref", targetRef);
-    targetRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
 
   const [icon, setIcon] = useState({
     type: "",
@@ -54,30 +48,8 @@ export default function NavButtons({
     setPosition(pos < 295 ? pos : 300);
   }, [currentPercent, iconStyle, whileHover]);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
-
-  //Button Controls
   const buttonArr = ["home", "about", "projects", "contact"];
   const buttonWidth = 100;
-  const handleSelect = (button) => {
-    switch (button) {
-      case "home":
-        scrollToTop();
-        break;
-      case "about":
-        scrollEffect(aboutRef);
-        break;
-      case "projects":
-        scrollEffect(projectRef);
-        break;
-      case "contact":
-        scrollEffect(contactRef);
-        break;
-      default:
-    }
-  };
 
   useEffect(() => {
     if (whileHover === icon.type) {

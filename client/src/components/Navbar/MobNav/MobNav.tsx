@@ -15,9 +15,9 @@ export default function MobNav({
   handleNavClick,
 }: MobNavProps) {
   const buttons: { name: string; icon: JSX.Element }[] = [
-    { name: "About", icon: <FiUser /> },
-    { name: "Projects", icon: <FiFolder /> },
-    { name: "Contact", icon: <FiCoffee /> },
+    { name: "about", icon: <FiUser /> },
+    { name: "projects", icon: <FiFolder /> },
+    { name: "contact", icon: <FiCoffee /> },
   ];
 
   return (

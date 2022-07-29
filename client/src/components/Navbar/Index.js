@@ -77,11 +77,44 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
     }
   }, [toast, id]);
 
+  const scrollEffect = (targetRef) => {
+    console.log("Targe ref", targetRef);
+    targetRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  //Button Controls
+
+  const handleSelect = (button) => {
+    switch (button) {
+      case "home":
+        scrollToTop();
+        break;
+      case "about":
+        scrollEffect(aboutRef);
+        break;
+      case "projects":
+        scrollEffect(projectRef);
+        break;
+      case "contact":
+        scrollEffect(contactRef);
+        break;
+      default:
+    }
+  };
+
   //Mob Props
   const [open, setOpen] = useState(false);
 
   const handleNavClick = (val) => {
     setOpen(false);
+    handleSelect(val);
   };
 
   return (
@@ -185,6 +218,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             <Flex align="center">
               <Flex align="center" display={["none", "none", "flex", "flex"]}>
                 <NavButtons
+                  handleSelect={handleSelect}
                   currentPercent={currentPercent}
                   shouldShowActions={shouldShowActions}
                   aboutRef={aboutRef}

@@ -39,6 +39,7 @@ export default function MobNavButton({
         whileTap={{ scale: 1.2, color: "#5686F5" }}
         style={{
           color: "white",
+          textTransform: "capitalize",
           fontSize: "16px",
           display: "flex",
           alignItems: "center",
