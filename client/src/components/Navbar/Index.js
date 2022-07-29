@@ -17,7 +17,7 @@ import {
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 //Components
 import NavButtons from "./NavButtons";
-import MobNav from "./MobNav";
+import MobNav from "./MobNav/MobNav";
 import NavTag from "../Tag/NavTag";
 import { FiHome, FiUser, FiFolder, FiCoffee } from "react-icons/fi";
 
@@ -91,14 +91,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
   }, [toast, id]);
 
   //Mob Props
-  const [open, setOpen] = useState(true);
-
-  // FiHome, FiUser, FiFolder, FiCoffee
-  const buttons = [
-    { name: "About", icon: <FiUser /> },
-    { name: "Projects", icon: <FiFolder /> },
-    { name: "Contact", icon: <FiCoffee /> },
-  ];
+  const [open, setOpen] = useState(false);
 
   const handleNavClick = (val) => {
     setOpen(false);
@@ -181,7 +174,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             <IconButton
               isRound={true}
               colorScheme="white"
-              // mt={shouldShowActions ? 0 : 1}
+              display={["flex", "flex", "none", "none"]}
               size="sm"
               color="#23272F"
               borderColor="#23272F"
@@ -211,105 +204,15 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
                   contactRef={contactRef}
                 />
               </Flex>
-
-              {/* Mob Nav  */}
-
-              {/* <MobNav setOpen={setOpen} open={open} /> */}
             </Flex>
           </motion.div>
 
           {/* Mob  */}
-          <AnimatePresence>
-            {open && (
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  borderRadius: "0px 0px 0px 150px",
-                  width: "100px",
-                  height: "0px",
-                }}
-                animate={{
-                  opacity: open ? 1 : 0,
-                  // padding: "40px",
-                  borderRadius: open && "0px",
-                  width: open ? "100%" : "0px",
-                  height: open ? "180px" : "0px",
-                  transition: {
-                    duration: 0.2,
-                  },
-                }}
-                exit={{
-                  borderRadius: "0px 0px 0px 150px",
-                  width: 0,
-                  padding: "0px",
-                  height: 0,
-                  transition: {
-                    duration: 0.2,
-                    delay: 0.3,
-                  },
-                }}
-                style={{
-                  position: "absolute",
-                  zIndex: 10000,
-                  top: "80px",
-                  right: 0,
-                  width: "100%",
-                  padding: "40px",
-                  minHeight: "180px",
-
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  boxShadow: "0px 6px 10px 3px rgba(0,0,0,0.1)",
-                  // background: "grey",
-                  background: "rgba(22, 24, 29, 0.3)",
-                  backdropFilter: "blur(7px)",
-                  borderBottom: "2px solid #23272F",
-                  borderTop: !shouldShowActions ? "2px solid #23272F" : "none",
-                }}
-              >
-                {buttons.map((button, i) => (
-                  <motion.div
-                    onClick={() => handleNavClick(button.text)}
-                    style={{ display: "flex", marginBottom: "15px" }}
-                    initial={{ opacity: 0, translateY: 20 }}
-                    animate={{
-                      opacity: 1,
-                      translateY: 0,
-                      transition: {
-                        duration: 0.1,
-                        delay: i * 0.1,
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: {
-                        duration: 0.1,
-                        delay: i * 0.1,
-                      },
-                      // translateY: 20,
-                      // transition: { duration: 0.1 },
-                    }}
-                  >
-                    <motion.button
-                      whileTap={{ scale: 1.2, color: "#5686F5" }}
-                      style={{
-                        color: "white",
-                        fontSize: "16px",
-                        display: "flex",
-                        alignItems: "center",
-                        textAlign: "center",
-                      }}
-                    >
-                      <span style={{ marginRight: "10px" }}>{button.icon}</span>
-
-                      {button.name}
-                    </motion.button>
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <MobNav
+            open={open}
+            handleNavClick={handleNavClick}
+            shouldShowActions={shouldShowActions}
+          />
         </Flex>
       </motion.div>
     </>
