@@ -5,7 +5,9 @@
   left: 0;
   top: 0;
   z-index: 9994;
-  /* background: rgba(22, 24, 29, 0.3); */
+  background: rgba(22, 24, 29, 0.3);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   transform: translateZ(0);
   justify-content: center;
   align-items: center;

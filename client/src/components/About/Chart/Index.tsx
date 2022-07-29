@@ -8,7 +8,7 @@ import Education from "./Education";
 import Facts from "./Facts";
 import ChartButtons from "./ChartButtons";
 //Logos
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 
 export default function Chart() {
   const [selected, setSelected] = useState("About");
@@ -52,7 +52,24 @@ export default function Chart() {
       >
         <ChartButtons setSelected={handleButtonSelect} selected={selected} />
         <Flex minW={"100%"} minH="380px" position={"relative"}>
-          <motion.div className={styles.containerVisible}>{markup}</motion.div>
+          <Box
+            p={["25px", "40px", "40px", "40px"]}
+            style={{
+              zIndex: "0",
+              boxShadow:
+                "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px",
+              flexDirection: "column",
+              borderRadius: "10px",
+              minHeight: "100%",
+              display: "flex",
+              justifyContent: "center",
+              minWidth: "100%",
+              border: "2px solid #23272F",
+              background: "#1A1D23",
+            }}
+          >
+            {markup}
+          </Box>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{
