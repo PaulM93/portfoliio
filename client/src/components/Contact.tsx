@@ -13,7 +13,6 @@ import {
   FormErrorMessage,
 } from "@chakra-ui/react";
 //Components
-import Subtitle from "./util/Subtitle";
 import MotionWrapper from "./util/MotionWrapper";
 
 interface ContactProps {
@@ -147,11 +146,13 @@ export default function Contact({ contactRef }: ContactProps) {
             textAlign={"center"}
           >
             <Flex align="center">
-              <Subtitle
-                secondaryText=""
-                hand={false}
-                sentence={"Thanks for taking the time to reach out."}
-              />
+              <Heading
+                size="lg"
+                color="secondary"
+                display={["flex", "flex", "flex", "flex"]}
+              >
+                Thanks for taking the time to reach out.
+              </Heading>
             </Flex>
             <Heading size="lg" mb={10} textAlign="center" color="primaryMute">
               How can I help you today?

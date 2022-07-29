@@ -1,5 +1,4 @@
 import React from "react";
-import Tag from "./Tag/NavTag";
 import { Box, Flex, Divider, Text, VStack } from "@chakra-ui/react";
 import NavTag from "./Tag/NavTag";
 
@@ -27,13 +26,6 @@ export default function Footer() {
             >
               Living, learning & leveling up <br /> one day at a time.
             </Text>
-            <Flex w="100%" justify={"center"} pr={0}>
-              <NavTag
-                // type={"github"}
-                link={"https://github.com/PaulM93"}
-                text={"Paulm93"}
-              />
-            </Flex>
 
             {/* <SocialButtons /> */}
             <Text color="primaryMute" fontSize={"sm"}>
