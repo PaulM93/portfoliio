@@ -63,6 +63,7 @@ export default function MobNav({
             boxShadow: "0px 6px 10px 3px rgba(0,0,0,0.1)",
             background: "rgba(22, 24, 29, 0.3)",
             backdropFilter: "blur(7px)",
+            WebkitBackdropFilter: "blur(7px)",
             borderBottom: "2px solid #23272F",
             borderTop: !shouldShowActions ? "2px solid #23272F" : "none",
           }}

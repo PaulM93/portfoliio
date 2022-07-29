@@ -12,7 +12,7 @@ export default function ProjectStatus({
   completed,
 }: ProjectStatusProps) {
   return !isOpen ? (
-    <Tooltip label={completed ? "Project Completed" : "In Progress"}>
+    <Tooltip label={completed ? "Completed" : "In Progress"}>
       <Icon as={CheckCircleIcon} color={completed ? "primary" : "orange.300"} />
     </Tooltip>
   ) : (
@@ -22,7 +22,7 @@ export default function ProjectStatus({
       variant="solid"
       colorScheme={completed ? "facebook" : "orange"}
     >
-      {completed ? "Project Completed" : "In Progress"}
+      {completed ? "Completed" : "In Progress"}
     </Tag>
   );
 }

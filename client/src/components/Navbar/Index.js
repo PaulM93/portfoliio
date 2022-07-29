@@ -104,7 +104,6 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             justifyContent: "center",
             background: "rgba(22, 24, 29, 0.3)",
             boxShadow: !open ? "0 4px 30px rgba(0, 0, 0, 0.1)" : "none",
-            // backdropFilter: "blur(7px) - "
             backdropFilter: "blur(7px)",
             WebkitBackdropFilter: "blur(7px)",
             height: "100%",
