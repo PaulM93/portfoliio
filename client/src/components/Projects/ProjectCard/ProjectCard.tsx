@@ -1,15 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "../Project.module.css";
-import {
-  Heading,
-  IconButton,
-  Box,
-  Button,
-  Link,
-  Divider,
-  Text,
-} from "@chakra-ui/react";
+import { Heading, IconButton, Box, Button, Link, Text } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 import Tags from "./Tags";
 import ProjectStatus from "./ProjectStatus";
@@ -24,6 +16,7 @@ export default function ProjectCard({
   hashtags,
   projectInfo,
   functionality,
+  considerations,
   github,
   link,
 }) {
@@ -108,29 +101,23 @@ export default function ProjectCard({
                   functionality={functionality}
                   completed={completed}
                 />
-                <Box mb={5}>
-                  <Heading fontSize="sm" mb={2} color="primary">
-                    Considerations and thoughts
-                  </Heading>
-                  <Text fontSize="sm" color="primaryMute">
-                    Although I am satisfied with what I have been able to
-                    achieve in building Olatoo, it was my first project and now
-                    with more knowledge, I may have considered other options to
-                    build the app. I am not happy with the folder structure and
-                    layout of my code but I put this down to lack of experience.
-                    I had originally built the app with CreateReactApp not
-                    knowing that this was not good for SEO purposes so I
-                    migrated everything over to Next.JS which was a difficult
-                    process.
-                  </Text>
-                </Box>
+                {considerations !== "" ? (
+                  <Box mb={5}>
+                    <Heading fontSize="sm" mb={2} color="primary">
+                      Considerations and thoughts
+                    </Heading>
+                    <Text fontSize="sm" color="primaryMute">
+                      {considerations}
+                    </Text>
+                  </Box>
+                ) : null}
               </motion.div>
             ) : (
               ""
             )}
 
             {/* Bottom Section */}
-            <Divider color={"primary"} mb={5} />
+            {/* <Divider mb={5} /> */}
             <div className={styles.buttonDiv}>
               <motion.div layout transition={{ layout: { duration: 0.5 } }}>
                 <ProjectStatus isOpen={isOpen} completed={completed} />

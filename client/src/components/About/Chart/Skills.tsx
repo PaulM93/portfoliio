@@ -57,6 +57,7 @@ export default function Skills({ duration }: { duration: number }) {
         { name: "NextJS", image: NextJS },
         { name: "Gatsby", image: Gatsby },
         { name: "Redux", image: Redux },
+        { name: "Git", image: GIT },
       ],
     },
     {

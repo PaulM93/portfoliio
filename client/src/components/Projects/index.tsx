@@ -38,6 +38,7 @@ export default function Index({
                 <ProjectCard
                   completed={i.completed}
                   projectInfo={i.projectInfo.info}
+                  considerations={i.projectInfo.considerations}
                   functionality={i.projectInfo.functionality}
                   title={i.title}
                   hashtags={i.hashtags}

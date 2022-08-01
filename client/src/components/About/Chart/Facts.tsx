@@ -5,9 +5,9 @@ import Interests from "./Interests";
 
 export default function Facts({ duration }: { duration: number }) {
   const facts = [
-    "I enjoy playing the guitar.",
-    "I am a fully fluent self-taught Spanish speaker.",
-    "I am currently learning how to speak Portuguese.",
+    "I enjoy playing the guitar. 🎸",
+    "I am a fully fluent self-taught Spanish speaker. 🇪🇸",
+    "I am currently learning how to speak Portuguese. 🇵🇹",
     "I have no relation to Bob Marley 😑",
   ];
 

@@ -18,6 +18,7 @@
         "Responsive Design"
     ],
     "projectInfo": {
+      "considerations": "Although I am satisfied with what I have been able to achieve in building Olatoo, it was my first project and now with more knowledge, I may have considered other options to build the app. I am not happy with the folder structure and layout of my code but I put this down to lack of experience. I had originally built the app with CreateReactApp not knowing that this was not good for SEO purposes so I migrated everything over to Next.JS which was a difficult process.",
             "functionality": [
                 "A user signs up to Olatoo using Facebook, Google or email all of which are handled through firebase authentication. Email authentication is then required which is also handled by firebase. ",
             "The user has access to three free trial classes. These may be booked directly from the tutor dashboard through booking buttons found on tutor cards.",
@@ -104,22 +105,28 @@
       "Axios"
   ],
   "projectInfo": {
-          "functionality": [],
+    "considerations": "Overall I am happy with what I have achieved creating Spaced. I am happy with the design aesthetic and the ease of use at which the app can be used. I plan on continuing to develop the app to improve its usability. I also want to create a native mobile version of the app that will allow the user to input and translate words directly to their flashcards through the camera. Upon developing the app I struggled with how to implement JWT refresh tokens so this is an area I need to improve on.",
+          "functionality": ["User authentication is handled using JWT, bcrypt and mysql. When a user signs up to Spaced passwords are hashed using bcrypt and saved to the mysql database along with a user profile for the user. A JWT token is then issued which is used to authorise api calls. When a user signs into Spaced the user password is retrieved from the database and compared to the entered password using bcrypt.",
+          "Once a user has signed up to Spaced they may then create a “collection”. The user may then edit and add flashcards to their collection. Cards are generated with the initial starting properties required for the supermemo2 algorithm.",
+          "When a user studies their flashcards each flashcard is passed through the supermemo algorithm and its properties are updated. Properties output by the algorithm are dependent on the user input for each flashcard. Once the study process is complete the updated flashcards are then saved to the database.The nexty study date for the collection is displayed using dayjs formatting.",
+          "Users also have the capability to edit, reset, and delete individual cards from each collection or may delete entire collections from their user dashboard.",
+          "A user may also update their password and email used to create their account from their profile section."
+        ],
           "info": [
               {
                   "title": "Description",
                   "description":
-                    "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
+                    "Spaced is a flashcard memory app that utilises the Supermemo 2 (SM-2) algorithm to provide an easy method of study. SM-2 is a simple spaced repetition algorithm that calculates the number of days to wait before reviewing a piece of information based on how easily the information was remembered today."
               },
               {
                   "title": "Technology",
                   "description":
-                    "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
+                    "Spaced is built using React (CRA) with Redux to handle front-end operations and utilises a Node.js Express backend server with mysql to handle user operations and authentication. Framer-motion is used to make the app UI more dynamic with clean animations."
                 },
                 {
                   "title": "Design Process",
                   "description":
-                    "The app is being designed with AdobeXD with the design framework ChakraUI."
+                    "The app was designed using figma and utilises both ChakraUI components and custom built framer motion components to provide an intuitive and reactive UI experience. "
                 }
           ]
       
@@ -145,6 +152,7 @@
         "Responsive Design"
     ],
     "projectInfo": {
+      "considerations": "",
             "functionality": [
                 "Authentication will be handled with Firebase Authentication",
                 "Payments for sessions and training products will be handled by Stripe.",
@@ -188,56 +196,18 @@
         "Axios"
     ],
     "projectInfo": {
+      "considerations": "I am very pleased with how my portfolio has turned out. I believe the design aesthetic is clean and the animations add some dynamism to the website. In the future I would update my portfolio to use a CMS so information can be updated more easily.",
             "functionality": [],
             "info": [
                 {
                     "title": "Description",
                     "description":
-                      "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
+                      "This portfolio is built to showcase some of the skills I have developed as a self taught developer. "
                 },
                 {
                     "title": "Technology",
                     "description":
-                      "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
-                  },
-                  {
-                    "title": "Design Process",
-                    "description":
-                      "The app is being designed with AdobeXD with the design framework ChakraUI."
-                  }
-            ]
-        
-    },
-    "link": "",
-    "github": "https://github.com/PaulM93/portfoliio"
-},
-{
-    "title": "Gatsby Blog",
-    "completed": false,
-    "hashtags": [
-        "React",
-        "Create React App",
-        "AdobeXD",
-        "Framer-motion",
-        "Nodemailer",
-        "Chakra UI",
-        "Heroku",
-        "NodeJS",
-        "Express",
-        "Axios"
-    ],
-    "projectInfo": {
-            "functionality": [],
-            "info": [
-                {
-                    "title": "Description",
-                    "description":
-                      "MyvirtualPT (MVPT) is an online marketplace where you can connect with personal trainers from all over the UK for one-to-one online training sessions. Online training products are also available for purchase."
-                },
-                {
-                    "title": "Technology",
-                    "description":
-                      "Development of the app is currently in progress. The app is being built with Next.JS, MongoDB and ChakraUI. Stripe will be used to handle payments."
+                      "This portfolio is built with Create React App and the design framework ChakraUI. Framer motion is used to animate components. Nodemailer is used with express and NodeJs to collect contact information and send emails."
                   },
                   {
                     "title": "Design Process",
