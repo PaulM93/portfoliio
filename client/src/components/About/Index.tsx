@@ -13,7 +13,7 @@ export default function Index({
 }) {
   return (
     <>
-      <div ref={aboutRef} style={{ paddingTop: "90px" }} />
+      <div ref={aboutRef} style={{ marginTop: "90px", paddingTop: "90px" }} />
       <MotionWrapper>
         <Flex
           minWidth={"100%"}

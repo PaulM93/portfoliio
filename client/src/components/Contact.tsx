@@ -129,14 +129,13 @@ export default function Contact({ contactRef }: ContactProps) {
 
   return (
     <>
-      <div ref={contactRef} style={{ paddingTop: "80px" }} />
+      <div ref={contactRef} style={{ marginTop: "90px", paddingTop: "90px" }} />
       <MotionWrapper>
         <Flex
           minHeight={["", "", "100vh", "100vh"]}
           w={["100%", "100%", "100%", "100%"]}
           align="flex-start"
           justify="center"
-          pt={"100px"}
           mb={["150px", "150px", "100px", "100px"]}
         >
           <Flex

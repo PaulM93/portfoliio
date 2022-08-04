@@ -180,7 +180,6 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             style={{
               position: "absolute",
               right: 20,
-              // top: 20,
               zIndex: 100000,
             }}
             animate={{
