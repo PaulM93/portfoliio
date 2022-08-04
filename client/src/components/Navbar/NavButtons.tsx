@@ -6,17 +6,11 @@ import NavButton from "./NavButton";
 import MotionIcon from "./MotionIcon";
 
 interface NavButtonsProps {
-  aboutRef: { current: HTMLDivElement };
-  projectRef: { current: HTMLDivElement };
-  contactRef: { current: HTMLDivElement };
   currentPercent: number;
   handleSelect: (val: string) => void;
 }
 
 export default function NavButtons({
-  aboutRef,
-  projectRef,
-  contactRef,
   currentPercent,
   handleSelect,
 }: NavButtonsProps) {

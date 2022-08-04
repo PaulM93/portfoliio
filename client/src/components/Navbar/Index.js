@@ -6,7 +6,7 @@ import { FiChevronRight } from "react-icons/fi";
 //Components
 import NavButtons from "./NavButtons";
 import MobNav from "./MobNav/MobNav";
-import NavTag from "../Tag/NavTag";
+import NavTavContainer from "../Tag/NavTagContainer";
 
 export default function NavBar({ aboutRef, contactRef, projectRef }) {
   const [shouldShowActions, setShouldShowActions] = useState(false);
@@ -173,11 +173,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             >
               Paul Marley
             </Heading>
-            <NavTag
-              type={"github"}
-              link={"https://github.com/PaulM93"}
-              text={"Paulm93"}
-            />
+            <NavTavContainer />
           </motion.div>
           <motion.button
             onClick={() => setOpen(!open)}
@@ -195,7 +191,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             <IconButton
               isRound={true}
               colorScheme="white"
-              display={["flex", "flex", "none", "none"]}
+              display={["flex", "flex", "flex", "none"]}
               size="sm"
               color="#23272F"
               borderColor="#23272F"
@@ -216,7 +212,7 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
             animate={{ x: 0 }}
           >
             <Flex align="center">
-              <Flex align="center" display={["none", "none", "flex", "flex"]}>
+              <Flex align="center" display={["none", "none", "none", "flex"]}>
                 <NavButtons
                   handleSelect={handleSelect}
                   currentPercent={currentPercent}
