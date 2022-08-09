@@ -45,8 +45,8 @@ export default function Hero() {
             style={{ color: "#98a0b3" }}
             mb={5}
           >
-            I am a self-taught full-stack junior developer based in Medellin,
-            Colombia. I am the founder and lead developer/designer of{" "}
+            I am a self-taught full-stack junior developer based in Glasgow,
+            Scotland. I am the founder and lead developer/designer of{" "}
             <Link href={"https://www.olatoo.com/"} isExternal>
               Olatoo.com
             </Link>{" "}
