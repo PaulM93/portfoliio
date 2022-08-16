@@ -81,7 +81,7 @@
         
     },
     "link": "https://www.olatoo.com/",
-    "github": "https://github.com/PaulM93/Olatoo"
+    "github": "https://github.com/PaulM93/Olatoo-Public"
 },
 {
   "title": "Spaced",
@@ -181,7 +181,7 @@
     "github": ""
 },
 {
-    "title": "Porftolio",
+    "title": "Portfolio",
     "completed": true,
     "hashtags": [
         "React",
