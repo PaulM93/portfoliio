@@ -46,9 +46,9 @@ export default function Hero() {
             mb={5}
           >
             I am a self-taught full-stack junior developer based in Glasgow,
-            Scotland. I am the founder and lead developer/designer of{" "}
+            Scotland. I am the founder of{" "}
             <Link href={"https://www.olatoo.com/"} isExternal>
-              Olatoo.com
+              Olatoo.com,
             </Link>{" "}
             a web app aimed at helping folks level up their Spanish.
           </Heading>
