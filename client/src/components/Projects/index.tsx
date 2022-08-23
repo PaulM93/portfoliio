@@ -15,7 +15,10 @@ export default function Index({
 }) {
   return (
     <>
-      <div ref={projectRef} style={{ marginTop: "90px", paddingTop: "90px" }}>
+      <div
+        ref={projectRef}
+        style={{ marginTop: "90px", paddingTop: "90px", marginBottom: "150px" }}
+      >
         <MotionWrapper>
           <Flex flexDir={"column"} alignItems="center">
             <Subtitle

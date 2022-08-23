@@ -129,7 +129,7 @@ export default function ProjectCard({
                 >
                   <Link href={github} isExternal>
                     <IconButton
-                      disabled={!completed}
+                      disabled={github === ""}
                       colorScheme={"whiteAlpha"}
                       mr={2}
                       variant="outline"
@@ -145,7 +145,7 @@ export default function ProjectCard({
                 >
                   <Link href={link} isExternal>
                     <Button
-                      disabled={!completed}
+                      disabled={link === ""}
                       colorScheme={"whiteAlpha"}
                       variant="outline"
                       size="sm"

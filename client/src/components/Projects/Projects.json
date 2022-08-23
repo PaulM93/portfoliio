@@ -140,7 +140,7 @@
     "hashtags": [
         "React",
         "NextJS",
-        "MongoDB",
+        "Firestore",
         "Firebase",
         "ChakraUI",
         "MomentJS",
@@ -178,7 +178,7 @@
         
     },
     "link": "",
-    "github": ""
+    "github": "https://github.com/PaulM93/mvpt"
 },
 {
     "title": "Portfolio",

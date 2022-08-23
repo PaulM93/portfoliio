@@ -1,7 +1,7 @@
 import React from "react";
 import MobNavButton from "./MobNavButton";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiUser, FiFolder, FiCoffee } from "react-icons/fi";
+import { FiUser, FiFolder, FiHome } from "react-icons/fi";
 
 interface MobNavProps {
   open: boolean;
@@ -15,9 +15,9 @@ export default function MobNav({
   handleNavClick,
 }: MobNavProps) {
   const buttons: { name: string; icon: JSX.Element }[] = [
+    { name: "home", icon: <FiHome /> },
     { name: "about", icon: <FiUser /> },
     { name: "projects", icon: <FiFolder /> },
-    { name: "contact", icon: <FiCoffee /> },
   ];
 
   return (
@@ -60,8 +60,8 @@ export default function MobNav({
             alignItems: "center",
             boxShadow: "0px 6px 10px 3px rgba(0,0,0,0.1)",
             background: "#5686F5",
-            // backdropFilter: "blur(7px)",
-            // WebkitBackdropFilter: "blur(7px)",
+            backdropFilter: "blur(7px)",
+            WebkitBackdropFilter: "blur(7px)",
             borderBottom: "2px solid #23272F",
             borderTop: !shouldShowActions ? "2px solid #23272F" : "none",
           }}

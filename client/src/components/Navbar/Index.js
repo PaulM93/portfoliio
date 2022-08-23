@@ -102,9 +102,6 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
       case "projects":
         scrollEffect(projectRef);
         break;
-      case "contact":
-        scrollEffect(contactRef);
-        break;
       default:
     }
   };
@@ -199,11 +196,11 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
               aria-label="open menu"
             />
           </motion.button>
-          <motion.div
+          {/* <motion.div
             style={{ opacity: 0 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-          ></motion.div>
+          ></motion.div> */}
 
           <motion.div
             transition={{ delay: 0.2, duration: 1 }}
@@ -218,7 +215,6 @@ export default function NavBar({ aboutRef, contactRef, projectRef }) {
                   shouldShowActions={shouldShowActions}
                   aboutRef={aboutRef}
                   projectRef={projectRef}
-                  contactRef={contactRef}
                 />
               </Flex>
             </Flex>

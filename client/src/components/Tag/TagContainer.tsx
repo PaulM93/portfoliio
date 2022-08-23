@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, Box } from "@chakra-ui/react";
 import Tag from "./Tag";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { FiDownload } from "react-icons/fi";
+import { FiDownload, FiMail } from "react-icons/fi";
 
 export default function TagContainer() {
   return (
@@ -25,16 +25,32 @@ export default function TagContainer() {
         <Box display={["none", "flex", "flex", "flex"]}>
           <Tag
             icon={<FiDownload />}
-            link={"/PaulMarley_Resume.pdf"}
+            link={"/PaulMarley_CV.pdf"}
             text={"Resume"}
+          />
+        </Box>
+        <Box display={["none", "flex", "flex", "flex"]}>
+          <Tag
+            icon={<FiMail />}
+            link={
+              "/'mailto:marleypaul91@gmail.com?subject=Subject&body=Body%20goes%20here'"
+            }
+            text={"Email"}
           />
         </Box>
       </Flex>
       <Box mt={2} display={["flex", "none", "none", "none"]}>
         <Tag
           icon={<FiDownload />}
-          link={"/PaulMarley_Resume.pdf"}
+          link={"/PaulMarley_CV.pdf"}
           text={"Resume"}
+        />
+        <Tag
+          icon={<FiMail />}
+          link={
+            "/'mailto:marleypaul91@gmail.com?subject=Subject&body=Body%20goes%20here'"
+          }
+          text={"Email"}
         />
       </Box>
     </>

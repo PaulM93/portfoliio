@@ -33,7 +33,6 @@ function App() {
           <Hero />
           <About aboutRef={aboutRef} />
           <Projects projectRef={projectRef} />
-          <Contact contactRef={contactRef} />
           <Footer />
         </Layout>
       </ChakraProvider>

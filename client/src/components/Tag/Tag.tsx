@@ -20,7 +20,6 @@ export default function Tag({ link, text, icon }: TagProps) {
   useEffect(() => {
     function handleScroll() {
       const { y } = ref.current.getBoundingClientRect();
-      console.log(y);
       if (y > 0) {
         setTagDisplay(false);
       }
@@ -34,10 +33,25 @@ export default function Tag({ link, text, icon }: TagProps) {
     };
   }, [isVisible, setTagDisplay, tagDisplay]);
 
+  const handleEmail = () => {
+    window.open(
+      "mailto:marleypaul91@example.com?subject=Subject&body=Hey%20Paul!!"
+    );
+  };
+
   return (
     <>
-      <Link href={link} isExternal download={true} target="_blank">
-        <div ref={ref} className={styles.navContainer}>
+      <Link
+        href={link}
+        isExternal
+        download={text === "Resume" ? true : false}
+        target="_blank"
+      >
+        <div
+          ref={ref}
+          className={styles.navContainer}
+          onClick={text === "Email" ? () => handleEmail() : null}
+        >
           <motion.div
             onHoverStart={() => setWhileHover(true)}
             onHoverEnd={() => setWhileHover(false)}
