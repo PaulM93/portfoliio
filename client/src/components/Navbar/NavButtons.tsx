@@ -26,9 +26,9 @@ export default function NavButtons({
   });
   const [whileHover, setWhileHover] = useState("");
   useEffect(() => {
-    console.log("Current percent", currentPercent);
-    const pos = currentPercent * 2.7;
-    console.log("pos", pos);
+    // console.log("Current percent", currentPercent);
+    const pos = currentPercent * 2.8;
+    // console.log("pos", pos);
     if (pos === 0 || pos < 90) {
       setIcon({ type: "home", icon: <FiHome style={iconStyle} /> });
     }
