@@ -135,6 +135,35 @@
   "github": "https://github.com/PaulM93/spaced-repetition"
 },
 {
+  "title": "Iphone Calculator",
+  "completed": true,
+  "hashtags": [
+    "HTML", "Javascript", "CSS", "Photoshop", "CSS Animation", "Font-Awesome"
+  ],
+  "projectInfo": {
+    "considerations": "",
+          "functionality": [
+              "On Button activated CSS animation mimicking Iphone startup screen.",
+              "Javascript is used to handle calculator operations."
+          ],
+          "info": [
+              {
+                  "title": "Description",
+                  "description":
+                    "A functioning copy of the Iphone calculator with startup animations"
+              },
+              {
+                  "title": "Technology",
+                  "description":
+                    "The calculator is built using Javascript, CSS and HTML."
+                }
+          ]
+      
+  },
+  "link": "https://voluble-pithivier-dc03c2.netlify.app/",
+  "github": "https://github.com/PaulM93/Calculator"
+},
+{
     "title": "MVPT",
     "completed": false,
     "hashtags": [
